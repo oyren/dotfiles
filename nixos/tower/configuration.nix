@@ -94,10 +94,10 @@ environment.systemPackages = with pkgs; [
 	# texlive.combined.scheme-full
 ];
 
+####################################################################################################################################################################
+ # Gerneral config
 
- ####################################################################################################################################################################
- # Services
-
+ # XServer
  services.xserver = {
          # Graphic
 	 videoDrivers = [ "nvidia" ];
@@ -114,8 +114,8 @@ environment.systemPackages = with pkgs; [
          #desktopManager.xterm.enable = false;
 	 windowManager.bspwm.enable = true;
          windowManager.default = "bspwm";
-         windowManager.bspwm.configFile = "/home/user/.dotfiles/bspwm/bspwmrc";
-         windowManager.bspwm.sxhkd.configFile= "/home/user/.dotfiles/bspwm/sxhkdrc";
+         windowManager.bspwm.configFile = "/home/user/dotfiles/common/bspwm/bspwmrc";
+         windowManager.bspwm.sxhkd.configFile= "/home/user/dotfiles/common/bspwm/sxhkdrc";
          desktopManager.xterm.enable = false;
 
          displayManager.auto = {
@@ -123,52 +123,48 @@ environment.systemPackages = with pkgs; [
 		user = "user";
 	 };
 
-
-	 # Multiple monitor
-	 xrandrHeads = ["DP-1" "HDMI-0"];
+ 	# Multiple monitor
+ 	xrandrHeads = ["DP-1" "HDMI-0"];
  };
 
 services.gnome3.gvfs.enable = true;
 services.openssh.forwardX11 = true;
  #services.teamviewer.enable  = true;
 
- ####################################################################################################################################################################
- # Gerneral config
+	# Hostname
+	networking.hostName = "nixos-tower";
+	
+	# Kernel
+	# boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
- 	 # Hostname
-	 networking.hostName = "nixos-tower";
-
-	 # Kernel
-	 # boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
-
-         # System Language
-	 i18n = {
+        # System Language
+	i18n = {
         	defaultLocale = "en_US.UTF-8";
-	 };
+	};
 
-	 # Time
-  	 time.timeZone = "Europe/Berlin";
+	# Time
+  	time.timeZone = "Europe/Berlin";
 
-	 # Mount
-	 # fileSystems."/oyra" =
-	 # {
-	 # device = "https://cloud.test.eu/seafdav";
-   	 # options = ["noauto,users,rw"];
-	 # fsType = "davfs";
-	 # };
-	 security.sudo.extraConfig =
-	 ''
-  	 user ALL=(ALL) NOPASSWD: /home/user/.dotfiles/script/webdav.sh
-	 '';
+	# Mount
+	# fileSystems."/oyra" =
+	# {
+	# device = "https://cloud.test.eu/seafdav";
+   	# options = ["noauto,users,rw"];
+	# fsType = "davfs";
+	# };
+	security.sudo.extraConfig =
+	''
+  		user ALL=(ALL) NOPASSWD: /home/user/.dotfiles/script/webdav.sh
+	'';
 
 
-	 # Fonts
-	 fonts = {
+	# Fonts
+	fonts = {
 		enableFontDir = true;
 		enableGhostscriptFonts = true;
 	 	fontconfig.ultimate.enable = true;
 		fonts = with pkgs; [
-	     	siji		
+		siji		
 		#	nerdfonts
 	     	# 	inconsolata
 	     	# 	terminus_font
@@ -180,43 +176,52 @@ services.openssh.forwardX11 = true;
 	     	# 	source-sans-pro
 	     	# 	source-serif-pro
 	    	];
-	  };
+	};
+	
+	# GTK3 Theme
+	environment.etc."xdg/gtk-3.0/settings.ini" = {
+		text = ''
+			gtk-icon-theme-name=arc
+			gtk-theme-name=arc-dark
+		'';
+		mode = "444";
+	};
 
-	 # Redshift
-	 services.redshift = {
-	     enable = true;
-	     latitude = "50";
-	     longitude = "10";
-	 };
+	# Redshift
+	services.redshift = {
+		enable = true;
+		latitude = "50";
+		longitude = "10";
+	};
 
-	 # Network
-   	 networking.networkmanager.enable = true;
+	# Network
+   	networking.networkmanager.enable = true;
 
-	 # Hardware
-	 hardware = {
+	# Hardware
+	hardware = {
 	     # bumblebee = {
 	     #	enable = true;
 	     #   connectDisplay = true;
 	     #	driver = "nvidia";
 	     #};
 
-	     pulseaudio = {
-   	 	enable = true;
-		support32Bit = true;
-	     };
+		pulseaudio = {
+   	 		enable = true;
+			support32Bit = true;
+		};
 
-	     opengl.driSupport32Bit = true;
-	 };
+	 	opengl.driSupport32Bit = true;
+	};
 
-	 # Printer
-  	 services.printing = {
-   	     enable = true;
-	     drivers = [ pkgs.samsungUnifiedLinuxDriver ];
-  	 };
+	# Printer
+  	services.printing = {
+   		enable = true;
+		drivers = [ pkgs.samsungUnifiedLinuxDriver ];
+  	};
 
-         # ZSH
-         programs.zsh = {
-	 	enable = true;
+        # ZSH
+        programs.zsh = {
+		enable = true;
 		interactiveShellInit = ''
       			export EDITOR=nvim
 			# Java
@@ -227,37 +232,37 @@ services.openssh.forwardX11 = true;
 				ls="ls --color=auto";
 				l="ls -alh";
 	    			grep="grep -i --color=auto";
-	    		};
-		 };
-         users.defaultUserShell = "/run/current-system/sw/bin/zsh";
+		};
+	};
+        users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 	
-	 # light
-	 programs.light.enable = true;
+	# light
+	programs.light.enable = true;
 
-         # SSH
-         services.openssh.enable = true;
+        # SSH
+        services.openssh.enable = true;
 
-	 # SWAP
-	 #swapDevices = [{
-	 #	 device = "/var/cache/swap/swap0";
-	 #}];
-	 #swapDevices.*.size = "1024";
+	# SWAP
+	#swapDevices = [{
+	#	 device = "/var/cache/swap/swap0";
+	#}];
+	#swapDevices.*.size = "1024";
 	
-	 # Clean up
-	 nix.gc.automatic = true;
-	 nix.gc.dates = "16:14";
-	 nix.gc.options = "--delete-older-than 30d";
-	 nix.extraOptions = ''
-	 gc-keep-output = true
-	 gc-keep-derivations = true
-	 auto-optimise-stor = true
-	 '';
+	# Clean up
+	nix.gc.automatic = true;
+	nix.gc.dates = "16:14";
+	nix.gc.options = "--delete-older-than 30d";
+	nix.extraOptions = ''
+	gc-keep-output = true
+	gc-keep-derivations = true
+	auto-optimise-stor = true
+	'';
 	
-	 # boot.cleanTmpDir = true;
+	# boot.cleanTmpDir = true;
 	
-	 # Search
-	 services.locate.enable = true;
-	 services.locate.interval = "10 * * * *";
+	# Search
+	services.locate.enable = true;
+	services.locate.interval = "10 * * * *";
 
  ####################################################################################################################################################################
  # Users
