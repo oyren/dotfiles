@@ -1,0 +1,36 @@
+#! /bin/sh
+sxhkd &
+polybar myBar &
+nm-applet &
+emacs --daemon &
+numlockx &
+
+if [[ $(hostname) == 'nixos' ]]; then
+	bspc monitor -d I II III IV V VI VII VIII IX X
+elif [[ $(hostname) == 'nixos-tower' ]]; then
+	xrandr --output DP-0 --off --output DVI-I-1 --off --output DVI-I-0 --off --output DP-1 --primary --mode 2560x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 2560x0 --rotate normal
+	bspc monitor DP-1 -d I II III IV V
+	bspc monitor HDMI-0 -d VI VII VIII IX X
+elif [[ $(hostname) == 'nixos-p50' ]]; then
+	bspc monitor DVI-I-3 -d VI VII VIII IX X
+	bspc monitor DVI-I-2 -d I II III IV V
+fi
+
+bspc config border_width         2
+bspc config window_gap           0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config remove_unplugged_monitors true 
+
+bspc config normal_border_color
+bspc config active_border_color  \#145f9d
+bspc config focused_border_color \#145f9d
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off

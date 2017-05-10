@@ -1,0 +1,9 @@
+* Blogs                                                              :elfeed:
+** entry-title: \(linux\|linus\|ubuntu\|kde\|gnome\)                  :linux:
+** entry-title: \(emacs\|spacemacs\)                                  :emacs:
+** Software Development                                                 :dev:
+*** Emacs                                                                     
+**** http://jr0cket.co.uk/atom.xml
+*** https://blog.qutebrowser.org/feeds/all.atom.xml                          :qutebrowser:
+** Hardware                                                        :hardware:
+*** https://pyra-handheld.com/boards/forums/pyra-news.250/index.rss                   :pyra:

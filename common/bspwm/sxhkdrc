@@ -1,0 +1,116 @@
+
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	roxterm
+
+# program launcher
+super + d
+	rofi -show drun -color-window '#000000, #000000,#000000' -color-normal '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -color-active '#000000, #aaaaaa, #000000, #145f9d, #eeeeee' -color-urgent '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -hide-scrollbar -location 2
+
+# close and kill
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + f 
+	bspc desktop -l next
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,m}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#super + {_,shift,alt,ctrl} + {h,j,k,l}
+    #{focus,move,resize,presel}.sh {west,south,north,east}
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# resize too east 
+super + alt + h
+	bspc node -z right -20 0 || bspc node -z left -20 0  
+
+# resize too west
+super + alt + l
+	bspc node -z right 20 0 || bspc node -z left 20 0 
+
+# resize too nord
+super + alt + k
+	bspc node -z top 0 -20 || bspc node -z bottom 0 -20  
+
+# resize too south
+super + alt + j
+	bspc node -z top 0 20 || bspc node -z bottom 0 20 
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+#
+# Hotkeys
+# 
+
+# FileManager
+super + e
+	pcmanfm
+
+# Toggle touchpad
+super + p 
+	$HOME/.dotfiles/script/touchpad_toggle.sh
+
+# Brightness
+XF86MonBrightness{Down,Up}
+	light {-U 5,-A 5}
+
+# Volume
+XF86Audio{LowerVolume,RaiseVolume}
+	pactl set-sink-volume 0 {-2%,+2%}
+
+# Mute
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+

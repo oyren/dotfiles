@@ -1,0 +1,321 @@
+"\\!" 0
+"\\," 0
+"\\:" 0
+"\\;" 0
+"\\Arrowvert" 0
+"\\Biggl" 0
+"\\Biggr" 0 (:prefixes ("\\Biggl"))
+"\\Bigl" 0
+"\\Bigr" 0 (:prefixes ("\\Bigl"))
+"\\Box" 0
+"\\Delta" 0
+"\\Diamond" 0
+"\\Downarrow" 0
+"\\\\" 0
+"\\acute" 0
+"\\aleph" 0
+"\\alpha" 0
+"\\amalg" 0
+"\\angle" 0
+"\\approx" 0
+"\\arccos" 0
+"\\arcsin" 0
+"\\arctan" 0
+"\\arg" 0
+"\\arrowvert" 0
+"\\ast" 0
+"\\asymp" 0
+"\\backslash" 0
+"\\bar" 0
+"\\begin" 0
+"\\beta" 0
+"\\bigcap" 0
+"\\bigcirc" 0
+"\\bigcup" 0
+"\\biggl" 0
+"\\biggr" 0 (:prefixes ("\\biggl"))
+"\\bigl" 0
+"\\bigodot" 0
+"\\bigoplus" 0
+"\\bigotimes" 0
+"\\bigr" 0 (:prefixes ("\\bigl"))
+"\\bigsqcup" 0
+"\\bigtriangledown" 0
+"\\bigtriangleup" 0
+"\\biguplus" 0
+"\\bigvee" 0
+"\\bigwedge" 0
+"\\bmod" 0
+"\\bot" 0
+"\\bowtie" 0
+"\\bracevert" 0
+"\\breve" 0
+"\\bullet" 0
+"\\cap" 0
+"\\cdot" 0
+"\\cdotp" 0 (:prefixes ("\\cdot"))
+"\\cdots" 0 (:prefixes ("\\cdot"))
+"\\check" 0
+"\\chi" 0
+"\\circ" 0
+"\\clubsuit" 0
+"\\colon" 0
+"\\cong" 0
+"\\coprod" 0
+"\\cos" 0
+"\\cosh" 0 (:prefixes ("\\cos"))
+"\\cot" 0
+"\\coth" 0 (:prefixes ("\\cot"))
+"\\csc" 0
+"\\cup" 0
+"\\dagger" 0
+"\\dashv" 0
+"\\ddagger" 0
+"\\ddot" 0
+"\\ddots" 0 (:prefixes ("\\ddot"))
+"\\deg" 0
+"\\delta" 0
+"\\det" 0
+"\\diamond" 0
+"\\diamondsuit" 0
+"\\digamma" 0
+"\\dim" 0
+"\\displaybreak" 0
+"\\div" 0
+"\\dot" 0
+"\\doteq" 0 (:prefixes ("\\dot"))
+"\\downarrow" 0
+"\\{" 0
+"\\|" 0
+"\\}" 0
+"\\ell" 0
+"\\emptyset" 0
+"\\end" 0
+"\\epsilon" 0
+"\\equiv" 0
+"\\eta" 0
+"\\exists" 0
+"\\exp" 0
+"\\flat" 0
+"\\forall" 0
+"\\frac" 0
+"\\frown" 0
+"\\gamma" 0
+"\\Gamma" 0
+"\\gcd" 0
+"\\geq" 0
+"\\gg" 0
+"\\grave" 0
+"\\hat" 0
+"\\hbar" 0
+"\\heartsuit" 0
+"\\hom" 0
+"\\hookleftarrow" 0
+"\\hookrightarrow" 0
+"\\iiiint" 0
+"\\iiint" 0
+"\\iint" 0
+"\\Im" 0
+"\\imath" 0
+"\\in" 0
+"\\inf" 0 (:prefixes ("\\in"))
+"\\infty" 0 (:prefixes ("\\in" "\\inf"))
+"\\int" 0 (:prefixes ("\\in"))
+"\\iota" 0
+"\\jmath" 0
+"\\Join" 0
+"\\kappa" 0
+"\\ker" 0
+"\\label" 0
+"\\lambda" 0
+"\\Lambda" 0
+"\\langle" 0
+"\\lbrack" 0
+"\\lceil" 0
+"\\ldotp" 0
+"\\ldots" 0
+"\\leadsto" 0
+"\\left" 0
+"\\Leftarrow" 0
+"\\leftarrow" 0 (:prefixes ("\\left"))
+"\\leftharpoondown" 0 (:prefixes ("\\left"))
+"\\leftharpoonup" 0 (:prefixes ("\\left"))
+"\\Leftrightarrow" 0
+"\\leftrightarrow" 0 (:prefixes ("\\left"))
+"\\leq" 0
+"\\lfloor" 0
+"\\lg" 0
+"\\lgroup" 0 (:prefixes ("\\lg"))
+"\\lhd" 0
+"\\lim" 0
+"\\liminf" 0 (:prefixes ("\\lim"))
+"\\limsup" 0 (:prefixes ("\\lim"))
+"\\ll" 0
+"\\lmoustache" 0
+"\\ln" 0
+"\\log" 0
+"\\longleftarrow" 0
+"\\Longleftarrow" 0
+"\\longleftrightarrow" 0
+"\\Longleftrightarrow" 0
+"\\longmapsto" 0
+"\\longrightarrow" 0
+"\\Longrightarrow" 0
+"\\lvert" 0
+"\\lVert" 0
+"\\mapsto" 0
+"\\mathbf" 0
+"\\mathcal" 0
+"\\mathfrak" 0
+"\\mathit" 0
+"\\mathnormal" 0
+"\\mathrm" 0
+"\\mathsf" 0
+"\\mathtt" 0
+"\\max" 0
+"\\mho" 0
+"\\mid" 0
+"\\middle" 0 (:prefixes ("\\mid"))
+"\\min" 0
+"\\mod" 0
+"\\models" 0 (:prefixes ("\\mod"))
+"\\mp" 0
+"\\mu" 0
+"\\nabla" 0
+"\\natural" 0
+"\\nearrow" 0
+"\\neg" 0
+"\\neq" 0
+"\\nexists" 0
+"\\ni" 0
+"\\notag" 0
+"\\nu" 0
+"\\nwarrow" 0
+"\\odot" 0
+"\\oint" 0
+"\\omega" 0
+"\\Omega" 0
+"\\ominus" 0
+"\\oplus" 0
+"\\oslash" 0
+"\\otimes" 0
+"\\overbrace" 0
+"\\overleftarrow" 0
+"\\overline" 0
+"\\overrightarrow" 0
+"\\overset" 0
+"\\parallel" 0
+"\\partial" 0
+"\\perp" 0
+"\\phantom" 0
+"\\phi" 0
+"\\Phi" 0
+"\\pi" 0
+"\\Pi" 0
+"\\pm" 0
+"\\pmod" 0
+"\\pod" 0
+"\\Pr" 0
+"\\prec" 0
+"\\preceq" 0
+"\\prime" 0
+"\\prod" 0
+"\\propto" 0
+"\\psi" 0
+"\\Psi" 0
+"\\qquad" 0
+"\\quad" 0
+"\\raisetag" 0
+"\\rangle" 0
+"\\rbrack" 0
+"\\rceil" 0
+"\\Re" 0
+"\\rfloor" 0
+"\\rgroup" 0
+"\\rhd" 0
+"\\rho" 0
+"\\Rightarrow" 0
+"\\rightarrow" 0 (:prefixes ("\\right"))
+"\\rightharpoondown" 0 (:prefixes ("\\right"))
+"\\rightharpoonup" 0 (:prefixes ("\\right"))
+"\\rightleftharpoons" 0 (:prefixes ("\\right"))
+"\\right" 0 (:prefixes ("\\left"))
+"\\rmoustache" 0
+"\\rvert" 0
+"\\rVert" 0
+"\\searrow" 0
+"\\sec" 0
+"\\setminus" 0
+"\\sharp" 0
+"\\sigma" 0
+"\\Sigma" 0
+"\\sim" 0
+"\\simeq" 0 (:prefixes ("\\sim"))
+"\\sin" 0
+"\\sinh" 0 (:prefixes ("\\sin"))
+"\\smile" 0
+"\\spadesuit" 0
+"\\sqcap" 0
+"\\sqcup" 0
+"\\sqrt" 0
+"\\sqsubset" 0
+"\\sqsubseteq" 0 (:prefixes ("\\sqsubset"))
+"\\sqsupset" 0
+"\\sqsupseteq" 0 (:prefixes ("\\sqsupset"))
+"\\star" 0
+"\\subset" 0
+"\\subseteq" 0 (:prefixes ("\\subset"))
+"\\substack" 0
+"\\succ" 0
+"\\succeq" 0 (:prefixes ("\\succ"))
+"\\sum" 0
+"\\sup" 0
+"\\supset" 0
+"\\supseteq" 0 (:prefixes ("\\supset"))
+"\\surd" 0
+"\\swarrow" 0
+"\\tan" 0
+"\\tanh" 0 (:prefixes ("\\tan"))
+"\\tau" 0
+"\\text" 0
+"\\tfrac" 0
+"\\theta" 0
+"\\Theta" 0
+"\\tilde" 0
+"\\times" 0
+"\\to" 0
+"\\top" 0 (:prefixes ("\\to"))
+"\\triangle" 0
+"\\triangleleft" 0 (:prefixes ("\\triangle"))
+"\\triangleright" 0 (:prefixes ("\\triangle"))
+"\\underbrace" 0
+"\\underline" 0
+"\\underset" 0
+"\\unlhd" 0
+"\\unrhd" 0
+"\\uparrow" 0
+"\\Uparrow" 0
+"\\updownarrow" 0
+"\\Updownarrow" 0
+"\\uplus" 0
+"\\upsilon" 0
+"\\Upsilon" 0
+"\\varepsilon" 0
+"\\varkappa" 0
+"\\varphi" 0
+"\\varpi" 0
+"\\varrho" 0
+"\\varsigma" 0
+"\\vartheta" 0
+"\\vdash" 0
+"\\vdots" 0
+"\\vec" 0
+"\\vee" 0
+"\\wedge" 0
+"\\widehat" 0
+"\\widetilde" 0
+"\\wp" 0
+"\\wr" 0
+"\\xi" 0
+"\\Xi" 0
+"\\zeta" 0

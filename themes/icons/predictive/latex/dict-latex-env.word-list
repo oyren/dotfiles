@@ -1,0 +1,53 @@
+"Bmatrix" 0 (:help #("\\begin{Bmatrix}...\\end{Bmatrix}  Matrix delimited by {...}" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))
+"Vmatrix" 0 (:help #("\\begin{Vmatrix}...\\end{Vmatrix}  Matrix delimited by ||...||" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))
+"abstract" 0
+"align" 0 (:help #("\\begin{align}...\\end{align}  Aligned equation group" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 12 (face (font-lock-function-name-face)) 17 20 (face (font-lock-keyword-face font-latex-sedate-face)) 21 26 (face (font-lock-function-name-face))))
+"align*" 0 (:prefixes ("align") :help #("\\begin{align*}...\\end{align*}  Unnumbered aligned equation group" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 21 (face (font-lock-keyword-face font-latex-sedate-face)) 22 28 (face (font-lock-function-name-face))))
+"alignat" 0 (:prefixes ("align") :help #("\\begin{alignat}{<#cols>}...\\end{alignat}  Aligned equation group with explicit spacing between columns" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 16 23 (face (font-lock-variable-name-face)) 27 31 (face (font-lock-keyword-face font-latex-sedate-face)) 32 39 (face (font-lock-function-name-face))))
+"alignat*" 0 (:prefixes ("align" "alignat") :help #("\\begin{alignat*}{<#cols>}...\\end{alignat*}  Unnumbered aligned equation group with explicit column spacing" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 15 (face (font-lock-function-name-face)) 17 24 (face (font-lock-variable-name-face)) 28 31 (face (font-lock-keyword-face font-latex-sedate-face)) 32 40 (face (font-lock-function-name-face))))
+"aligned" 0 (:prefixes ("align") :help #("\\begin{aligned}...\\end{aligned}  Aligned equation building block" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))
+"alignedat" 0 (:prefixes ("align" "aligned") :help #("\\begin{alignedat}{<#cols>}...\\end{alignedat}  Aligned equation building block with explicit column spacing"  0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 16 (face (font-lock-function-name-face)) 18 25 (face (font-lock-variable-name-face)) 29 33 (face (font-lock-keyword-face font-latex-sedate-face)) 34 43 (face (font-lock-function-name-face))))
+"array" 0
+"bmatrix" 0 (:help #("\\begin{bmatrix}...\\end{bmatrix}  Matrix delimited by [...]" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))
+"center" 0
+"description" 0
+"displaymath" 0
+"document" 0
+"enumerate" 0
+"equation" 0
+"equation*" 0
+"figure" 0
+"figure*" 0 (:prefixes ("figure"))
+"flalign" 0
+"flalign*" 0 (:prefixes ("flalign"))
+"flushleft" 0
+"flushright" 0
+"gather" 0
+"gather*" 0 (:prefixes ("gather"))
+"gathered" 0
+"itemize" 0
+"list" 0
+"matrix" 0 (:help #("\\begin{matrix}...\\end{matrix}  Matrix without delimiters" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 13 (face (font-lock-function-name-face)) 17 21 (face (font-lock-keyword-face font-latex-sedate-face)) 22 28 (face (font-lock-function-name-face))))
+"minipage" 0
+"multline" 0
+"multline*" 0 (:prefixes ("multline"))
+"picture" 0
+"pmatrix" 0 (:help #("\\begin{pmatrix}...\\end{pmatrix}  Matrix delimited by (...)" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))
+"quotation" 0
+"quote" 0
+"smallmatrix" 0 (:help #("\\begin{smallmatrix}...\\end{smallmatrix}  Matrix suitable for inline math" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 18 (face (font-lock-function-name-face)) 22 26 (face (font-lock-keyword-face font-latex-sedate-face)) 27 38 (face (font-lock-function-name-face))))
+"split" 0
+"subequations" 0
+"tabbing" 0
+"table" 0
+"table*" 0 (:prefixes ("table"))
+"tabular" 0 (:help #("\\begin{tabular}[<pos>]{<cols>}...\\end{tabular}  Tabular material" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 16 21 (face (font-lock-variable-name-face)) 23 29 (face (font-lock-variable-name-face)) 33 37 (face (font-lock-keyword-face font-latex-sedate-face))  38 45 (face (font-lock-function-name-face))))
+"tabular*" 0 (:prefixes ("tabular") :help #("\\begin{tabular*}{<width>}[<pos>]{<cols>}...\\end{tabular*}  Fixed width tabular material" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 15 (face (font-lock-function-name-face)) 17 24 (face (font-lock-variable-name-face)) 26 31 (face (font-lock-variable-name-face)) 33 39 (face (font-lock-variable-name-face)) 43 47 (face (font-lock-keyword-face font-latex-sedate-face)) 48 56 (face (font-lock-function-name-face))))
+"thebibliography" 0
+"theorem" 0
+"titlepage" 0
+"trivlist" 0
+"verbatim" 0
+"verbatim*" 0 (:prefixes ("verbatim"))
+"verse" 0
+"vmatrix" 0 (:help #("\\begin{vmatrix}...\\end{vmatrix}  Matrix delimited by |...|" 0 6 (face (font-lock-keyword-face font-latex-sedate-face)) 7 14 (face (font-lock-function-name-face)) 18 22 (face (font-lock-keyword-face font-latex-sedate-face)) 23 30 (face (font-lock-function-name-face))))

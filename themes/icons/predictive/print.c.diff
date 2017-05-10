@@ -1,0 +1,11 @@
+--- print.c	2008-10-24 11:18:33.000000000 +0100
++++ print.c.new	2008-10-24 11:19:27.000000000 +0100
+@@ -88,7 +88,7 @@
+ static int new_backquote_output;
+ 
+ /* Detect most circularities to print finite output.  */
+-#define PRINT_CIRCLE 200
++#define PRINT_CIRCLE 1000
+ static Lisp_Object being_printed[PRINT_CIRCLE];
+ 
+ /* When printing into a buffer, first we put the text in this

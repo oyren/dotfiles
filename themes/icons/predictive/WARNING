@@ -1,0 +1,37 @@
+
+DANGER, Will Robinson, DANGER!!!
+----------------------------------
+
+************   The dumped dictionary backup files from old versions of the
+* WARNING! *   predictive package are *NOT* compatible with this
+************   version. You have to convert the dumped file format to the
+new format before recreating your dictionaries in this new version.
+
+If you do not do this, you will lose any prefix relationships defined in
+the dictionary (see Relationships between Words, Emacs Predictive
+Completion Manual) when you recreate the dictionary, though you will
+still be able to recreate the same contents and word weights.
+
+I know I promised the dump format was guaranteed to be portable between
+predictive versions. I lied.
+
+To port a dictionary to the new version, use the following procedure:
+
+1. backup the dictionay using `predictive-dump-dict-to-file' as just
+   described, using the *old* version of the predictive package;
+
+2. start Emacs;
+
+3. load the "predictive-convert-dump-format" library (included in this
+   version of the predictive completion package) using "M-x load-file
+   /path/to/predictive-convert-dump-format.el";
+
+4. open the dumped dictionary backup file in Emacs;
+
+5. run the `predictive-convert-dump-format' command;
+
+6. recreate the dictionary using the `predictive-create-dict'
+   command (see Creating Dictionaries, Predictive Completion Manual).
+
+Repeat this procedure for each dictionary that you want to port to this
+new version.
