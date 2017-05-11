@@ -116,7 +116,8 @@ Highly recommended to take a look at his Github page <https://github.com/ssh0/do
 For a deeper insight, check out the config files.  
 Note: You can press super/win key and move a window around in floating mode.  
 ## Install
-**You have to look at the configuration and adjust it for your needs. If you have questions, feel free to ask.**  
+**Does not work at the moment! Must be rewritten!**
+**You have to look at the configuration and adjust it for your needs. If you have questions, feel free to ask.**
 The script will ask you for your home direcoty and move the dofiles there. Following it will ask you which files you want to hardlink.  
 You can choose between:  
 | Device         | Description              |
