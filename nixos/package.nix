@@ -10,8 +10,6 @@ with lib;
 		gnome3.gnome_themes_standard
 		gtk_engines
 		gtk-engine-murrine
-		haskellPackages.xmobar
-		haskellPackages.xmonad
 		polybar
 		tango-icon-theme
 		rofi
@@ -32,7 +30,7 @@ with lib;
 		keepass
 		less
 		libreoffice
-		lxappearance
+		#lxappearance
 		neovim
 		openvpn
 		pavucontrol
@@ -47,6 +45,7 @@ with lib;
 		thunderbird
 		tig
 		tldr
+		xarchiver
 		x11vnc
 		zathura  # PDF Viewer
 
@@ -87,7 +86,9 @@ with lib;
 		aspellDicts.en
 		# texlive.combined.scheme-full
 	]) ++ (with rolling; [
-
+		chromium
+		lxappearance
+		qutebrowser
 	]);
 }
 
