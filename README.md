@@ -56,6 +56,7 @@ Since 2017.04.17 I use bspwm instead Xmonad.
 | ctrl_{h,j,k,l}  | preselect                                  |
 | ctrl_space      | canel the preselection                     |
 | e               | lounch pcmanfm                             |
+
 **Every key must be pressed in combination with the super/win key**.  
 For a deeper insight, check out the config files.  
 Note: You can press super/win key and move a window around in floating mode.  
