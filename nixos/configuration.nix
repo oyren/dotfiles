@@ -14,7 +14,6 @@ in
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
 	services.xserver = {
-		videoDrivers = [ "nvidia" ];
 
 		enable = true;
 		layout = "us";
