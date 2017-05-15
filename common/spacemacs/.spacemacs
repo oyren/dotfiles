@@ -45,9 +45,16 @@ values."
       auto-completion-enable-help-tooltip 'manual
       :disabled-for erc)
      c-c++
+     (elfeed :variables rmh-elfeed-org-files (list "~/.dotfiles/spacemacs/elfeed.org")) ;; SPC a f
      git ;; SPC g s
+     html
      (ibuffer :variables ibuffer-group-buffers-by nil) ;; SPC b B
-     org
+     latex
+     nixos
+     (org :variables
+          org-enable-github-support t
+          org-enable-reveal-js-support t
+     )
      ranger ;; SPC a r
      (shell :variables shell-default-shell 'eshell) ;; SPC '
      (syntax-checking :variables syntax-checking-enable-by-default nil)
@@ -144,7 +151,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox spacemacs-dark)
+   dotspacemacs-themes '(monokai alect-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -340,6 +347,15 @@ you should place your code here."
         spaceline-buffer-encoding-abbrev-p nil
         spaceline-version-control-p nil
         spaceline-erc-track-p nil)
+
+
+  ;;Test
+  (setq-default indent-tabs-mode t)
+  (setq-default tab-width 4)
+  (setq-default c-basic-offset 2)
+  (setq indent-line-function 'nil)
+  (setq tab-always-indent 'nil)
+  (setq spacemacs-indent-sensitive-modes (add-to-list 'spacemacs-indent-sensitive-modes 'nix-mode))
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -352,7 +368,7 @@ you should place your code here."
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(package-selected-packages
    (quote
-    (ledger-mode flycheck-ledger disaster company-c-headers cmake-mode clang-format xterm-color smeargle shell-pop ranger orgit org-projectile org-present org-pomodoro flycheck-pos-tip flycheck company-quickhelp pos-tip fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy))))
+    (web-mode tagedit slim-mode scss-mode sass-mode pug-mode ox-reveal ox-gfm nix-mode less-css-mode haml-mode emmet-mode elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed company-web web-completion-data company-nixos-options nixos-options company-auctex auctex-latexmk auctex ledger-mode flycheck-ledger disaster company-c-headers cmake-mode clang-format xterm-color smeargle shell-pop ranger orgit org-projectile org-present org-pomodoro flycheck-pos-tip flycheck company-quickhelp pos-tip fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
