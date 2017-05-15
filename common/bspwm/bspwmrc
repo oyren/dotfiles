@@ -12,8 +12,7 @@ elif [[ $(hostname) == 'nixos-tower' ]]; then
 	bspc monitor DP-1 -d I II III IV V
 	bspc monitor HDMI-0 -d VI VII VIII IX X
 elif [[ $(hostname) == 'nixos-p50' ]]; then
-	bspc monitor DVI-I-3 -d VI VII VIII IX X
-	bspc monitor DVI-I-2 -d I II III IV V
+	bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
 bspc config border_width         2
