@@ -4,6 +4,7 @@ polybar myBar &
 nm-applet &
 emacs --daemon &
 numlockx &
+seafile-applet &
 
 if [[ $(hostname) == 'nixos' ]]; then
 	bspc monitor -d I II III IV V VI VII VIII IX X
