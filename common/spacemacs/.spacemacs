@@ -377,10 +377,9 @@ you should place your code here."
 		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* TODO %?")
 				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* Respond to %?")
-				  
+				   "* [#A] Respond to %?")
 
-		   )))
+				  )))
 
 
 
