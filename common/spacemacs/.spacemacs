@@ -403,12 +403,26 @@ you should place your code here."
 				  ("PHONE" :foreground "turquoise" :weight bold)
 				  ("APPT" :foreground "magenta" :weight bold))))
 
+	;; Org Custom Agenda
+	(setq org-agenda-custom-commands
+		  '(("d" "Daily agenda and all TODOs"
+			 ((tags "PRIORITY=\"A\""
+					((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+					 (org-agenda-overriding-header "High-priority unfinished tasks:")))
+			  (agenda "" ((org-agenda-ndays 1)))
+			  (alltodo ""
+					   ((org-agenda-skip-function '(or (air-org-skip-subtree-if-habit)
+													   (air-org-skip-subtree-if-priority ?A)
+													   (org-agenda-skip-if nil '(scheduled deadline))))
+						(org-agenda-overriding-header "ALL normal priority tasks:"))))
+			 ((org-agenda-compact-blocks t)))))
+
 	;; Allow to iterate easily between todo-keywords using meta->/meta-<
 	(setq org-use-fast-todo-selection t)
 	(setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 	;; Log status change to done
-	(setq org-log-done (qute time))
+	(setq org-log-done 'time)
 
 	;; Reveal
 	;;(setq org-reveal-root "~/src/reveal.js")
