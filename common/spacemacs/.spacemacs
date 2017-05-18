@@ -383,6 +383,9 @@ you should place your code here."
 				   "* Meeting with %?\n%U" :clock-in t :clock-resume t)
 				  ("p" "Phone call" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* PHONE %?\n%U" :clock-in t :clock-resume t)
+				  ("P" "Project" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "* PROJ %?" :clock-in t :clock-resume t)
+
 				  )))
 
 
