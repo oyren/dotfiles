@@ -385,7 +385,8 @@ you should place your code here."
 				   "* PHONE %?\n%U" :clock-in t :clock-resume t)
 				  ("P" "Project" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* PROJ %?" :clock-in t :clock-resume t)
-
+				  ("n" "Note" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "%? :Note:\n%U\n%a" :clock-in t :clock-resume t)
 				  )))
 
 
