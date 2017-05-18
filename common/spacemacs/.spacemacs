@@ -373,12 +373,13 @@ you should place your code here."
 		  '((sequence "|" "TODO" "IN-PROGRESS" "NEXT" "DONE" "CANCELED")))
 
 	;; Org Capture
+	;; %a link to the location from where zou called the capture command.
 	(setq org-capture-templates
 		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* TODO %?")
+				   "* TODO %?\n%a")
 				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* [#A] Respond to %?")
-
+				  
 				  )))
 
 
