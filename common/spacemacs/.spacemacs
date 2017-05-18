@@ -378,8 +378,10 @@ you should place your code here."
 		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* TODO %?\n%a")
 				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* [#A] Respond to %?")
-				  
+				   "* [#A] Respond to %?  \n%U\n%a\n" :clock-in t :clock-resume t)
+				  ("m" "Meeting" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "* Meeting with %?\n%U" :clock-in t :clock-resume t)
+				  ("")
 				  )))
 
 
