@@ -397,15 +397,18 @@ you should place your code here."
 				  ("DONE" :foreground "forest green" :weight bold)
 				  ("PROJ" :foreground "sky blue" :weight bold)
 				  ("WAITING" :foreground "orange" :weight bold)
-				  ("HOLD" :foreground "magenta" :weight bold)
+				  ("HOLD" :foreground "purple" :weight bold)
 				  ("CANCELLED" shadow)
-				  ("MEETING" :foreground "forest green" :weight bold)
-				  ("PHONE" :foreground "forest green" :weight bold))))
+				  ("MEETING" :foreground "cyan" :weight bold)
+				  ("PHONE" :foreground "turquoise" :weight bold)
+				  ("APPT" :foreground "magenta" :weight bold))))
 
 	;; Allow to iterate easily between todo-keywords using meta->/meta-<
 	(setq org-use-fast-todo-selection t)
 	(setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
+	;; Log status change to done
+	(setq org-log-done (qute time))
 
 	;; Reveal
 	;;(setq org-reveal-root "~/src/reveal.js")
