@@ -342,6 +342,66 @@ you should place your code here."
   (require 'beancount)
   (add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
 
+  ;; Custom Key Bindings
+
+  ;; Indent
+  (setq-default indent-tabs-mode t)
+  (setq-default tab-width 4)
+  (setq-default c-basic-offset 2)
+  (setq indent-line-function 'nil)
+  (setq tab-always-indent 'nil)
+  (setq spacemacs-indent-sensitive-modes (add-to-list 'spacemacs-indent-sensitive-modes 'nix-mode))
+
+  ;; Latex
+  (progn (setq TeX-view-program-selection '((output-pdf "Zathura"))))
+
+  ;; Miscellaneous
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+
+  ;; Org
+  (with-eval-after-load 'org
+
+
+	;; Org Agenda Files
+	(setq org-agenda-files (quote ("~/org/")))
+
+	;; Avoid setting entries as DONE when there are still sub-entries that are not DONE
+	(setq org-enforce-todo-dependencies t)
+
+	;; Org Todo Keywords
+	(setq org-todo-keywords
+		  '((sequence "|" "TODO" "IN-PROGRESS" "NEXT" "DONE" "CANCELED")))
+
+	;; Org Capture
+	(setq org-capture-templates
+		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "* TODO %?")
+				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "* Respond to %?")
+				  
+
+		   )))
+
+
+
+		   ;;(("t" "TODO" entry
+				 ;;(file+headline "~/org/tasks.org" "Inbox")
+			 ;;"* TODO %?"))
+		  ;;'(("r" "RESPOND" entry
+			 ;;(file+headline "~/org/tasks.org" "Inbox")
+			 ;;"* [#A] Respond to %?"))
+		  ;;)
+
+	;; Allow to iterate easily between todo-keywords using meta->/meta-<
+	(setq org-use-fast-todo-selection t)
+	(setq org-treat-S-cursor-todo-selection-as-state-change nil)
+
+
+	;; Reveal
+	;;(setq org-reveal-root "~/src/reveal.js")
+	(setq org-reveal-root "file:/home/user/src/reveal.js")
+  )
+
   ;; Spaceline
   (setq powerline-default-separator 'arrow
         spaceline-buffer-encoding-abbrev-p nil
@@ -349,13 +409,6 @@ you should place your code here."
         spaceline-erc-track-p nil)
 
 
-  ;;Test
-  (setq-default indent-tabs-mode t)
-  (setq-default tab-width 4)
-  (setq-default c-basic-offset 2)
-  (setq indent-line-function 'nil)
-  (setq tab-always-indent 'nil)
-  (setq spacemacs-indent-sensitive-modes (add-to-list 'spacemacs-indent-sensitive-modes 'nix-mode))
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
