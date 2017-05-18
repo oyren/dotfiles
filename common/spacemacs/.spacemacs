@@ -381,7 +381,8 @@ you should place your code here."
 				   "* [#A] Respond to %?  \n%U\n%a\n" :clock-in t :clock-resume t)
 				  ("m" "Meeting" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* Meeting with %?\n%U" :clock-in t :clock-resume t)
-				  ("")
+				  ("p" "Phone call" entry (file+headline "~/org/tasks.org" "Inbox")
+				   "* PHONE %?\n%U" :clock-in t :clock-resume t)
 				  )))
 
 
