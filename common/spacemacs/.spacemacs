@@ -378,7 +378,7 @@ you should place your code here."
 	;; %a link to the location from where zou called the capture command.
 	(setq org-capture-templates
 		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* TODO %?\n%a")
+				   "* TODO %?\n%a" :clock-in t :clock-resume t)
 				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* TODO [#A] Respond to %?  \n%U\n%a\n" :clock-in t :clock-resume t)
 				  ("m" "Meeting" entry (file+headline "~/org/tasks.org" "Inbox")
