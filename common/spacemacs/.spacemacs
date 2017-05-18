@@ -370,7 +370,9 @@ you should place your code here."
 
 	;; Org Todo Keywords
 	(setq org-todo-keywords
-		  '((sequence "|" "TODO" "IN-PROGRESS" "NEXT" "DONE" "CANCELED")))
+		  (quote ((sequence "TODO(t)" "IN-PROGRESS" "|" "DONE(d)")
+				  (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")
+				  (sequence "APPT(a)" "PROJ(p)" "PHONE(P)" "MEETING(m)"))))
 
 	;; Org Capture
 	;; %a link to the location from where zou called the capture command.
@@ -378,26 +380,27 @@ you should place your code here."
 		  (quote (("t" "todo" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* TODO %?\n%a")
 				  ("r" "respond" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* [#A] Respond to %?  \n%U\n%a\n" :clock-in t :clock-resume t)
+				   "* TODO [#A] Respond to %?  \n%U\n%a\n" :clock-in t :clock-resume t)
 				  ("m" "Meeting" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "* Meeting with %?\n%U" :clock-in t :clock-resume t)
+				   "* MEETING with %?\n%U" :clock-in t :clock-resume t)
 				  ("p" "Phone call" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* PHONE %?\n%U" :clock-in t :clock-resume t)
 				  ("P" "Project" entry (file+headline "~/org/tasks.org" "Inbox")
 				   "* PROJ %?" :clock-in t :clock-resume t)
 				  ("n" "Note" entry (file+headline "~/org/tasks.org" "Inbox")
-				   "%? :Note:\n%U\n%a" :clock-in t :clock-resume t)
+				   "* %? :Note:\n%U\n%a" :clock-in t :clock-resume t)
 				  )))
 
-
-
-		   ;;(("t" "TODO" entry
-				 ;;(file+headline "~/org/tasks.org" "Inbox")
-			 ;;"* TODO %?"))
-		  ;;'(("r" "RESPOND" entry
-			 ;;(file+headline "~/org/tasks.org" "Inbox")
-			 ;;"* [#A] Respond to %?"))
-		  ;;)
+	(setq org-todo-keyword-faces
+		  (quote (("TODO" :foreground "red" :weight bold)
+				  ("IN-PROGRESS" :foreground "blue" :weight bold)
+				  ("DONE" :foreground "forest green" :weight bold)
+				  ("PROJ" :foreground "sky blue" :weight bold)
+				  ("WAITING" :foreground "orange" :weight bold)
+				  ("HOLD" :foreground "magenta" :weight bold)
+				  ("CANCELLED" shadow)
+				  ("MEETING" :foreground "forest green" :weight bold)
+				  ("PHONE" :foreground "forest green" :weight bold))))
 
 	;; Allow to iterate easily between todo-keywords using meta->/meta-<
 	(setq org-use-fast-todo-selection t)
