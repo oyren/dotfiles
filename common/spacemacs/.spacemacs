@@ -474,7 +474,7 @@ you should place your code here."
 								(org-agenda-todo-ignore-deadlines bh/hide-scheduled-and-waiting-next-tasks)
 								(org-agenda-todo-ignore-with-date bh/hide-scheduled-and-waiting-next-tasks)
 								(org-agenda-sorting-strategy
-								 '(category-keep))))
+								 '(todo-state-down))))
 					(tags-todo "-CANCELLED+WAITING|HOLD/!"
 							   ((org-agenda-overriding-header (concat "Waiting and Postponed Tasks"
 																	  (if bh/hide-scheduled-and-waiting-next-tasks
