@@ -33,7 +33,27 @@ in
 		xrandrHeads = ["DP-1" "HDMI-0"];
 	};
 
-	#Kernel
+	# Systemd
+	systemd = {
+		services.checkmail = {
+			description = "check mail";
+			serviceConfig = {
+				Type = "oneshot";
+				ExecStart = /home/user/dotfiles/common/scripts/checkmail.sh;
+			};
+		};
+		timers.checkmail = {
+			description = "Check Mail ever fifteen minutes";
+			timerConfig = {
+				Persistent= false;
+				OnBootSec = "5min";
+				OnUnitActiveSec = "15min";
+				Unit= "checkmail.service";
+			};
+			wantedBy = [ "default.target" ];
+		};
+	};
+	# Kernel
 	#boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
 	#System Language
