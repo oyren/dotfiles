@@ -16,6 +16,11 @@ with lib;
 		trayer
 		xorg.xrandr
 
+		# Mail
+		isync
+		notmuch
+		python27Packages.afew
+
 		# Software
 		beancount
 		calibre
