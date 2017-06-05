@@ -47,7 +47,7 @@ in
 			timerConfig = {
 				Persistent= false;
 				OnBootSec = "5min";
-				OnUnitActiveSec = "15min";
+				OnUnitActiveSec = "5min";
 				Unit= "checkmail.service";
 			};
 			wantedBy = [ "default.target" ];
