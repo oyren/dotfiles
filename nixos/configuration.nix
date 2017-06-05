@@ -35,15 +35,15 @@ in
 
 	# Systemd
 	systemd = {
-		services.checkmail = {
+		user.services.checkmail = {
 			description = "check mail";
 			serviceConfig = {
 				Type = "oneshot";
 				ExecStart = /home/user/dotfiles/common/scripts/checkmail.sh;
 			};
 		};
-		timers.checkmail = {
-			description = "Check Mail ever fifteen minutes";
+		user.timers.checkmail = {
+			description = "Run the Checkmail Service every 5 Minutes";
 			timerConfig = {
 				Persistent= false;
 				OnBootSec = "5min";
