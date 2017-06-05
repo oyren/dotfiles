@@ -41,6 +41,7 @@ with lib;
 		shutter
 		ssvnc
 		steam
+		speedcrunch
 		taskwarrior
 		thunderbird
 		tig
@@ -52,7 +53,7 @@ with lib;
 		# System
 		arandr
 		bashmount
-		busybox
+		#busybox
 		curl
 		davfs2
 		exfat
