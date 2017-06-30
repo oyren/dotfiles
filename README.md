@@ -129,7 +129,7 @@ You can choose between:
 #### <a> 1. Clone the repository:</a>
 
 ```sh
-git clone https://github.com/mscheuren/dotfiles.git
+git clone https://github.com/oyren/dotfiles.git
 ```
 #### <a> 2. Run the install.sh script:</a>
 If you want to install Nixos, you have to run the script as root.
