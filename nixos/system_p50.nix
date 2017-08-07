@@ -6,14 +6,22 @@
 	services.xserver = {
 
 		# Graphic
-		#videoDrivers = [intel nvidia];
+		videoDrivers = ["intel nvidia"];
 
 		# Notebook
 		synaptics.enable = true;
 		synaptics.twoFingerScroll = true;
 	};
 
-	 # Bootloader
+	# Hardware
+	hardware = {
+	    bumblebee = {
+		      #connectDisplay = true;
+			  enable = true;
+		};
+	};
+
+	# Bootloader
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 }
