@@ -161,7 +161,7 @@ in
 	users.extraUsers.user = {
 		isNormalUser = true;
 		home = "/home/user";
-		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers"];
+		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout"];
 	};
 
 	virtualisation.virtualbox.host.enable = true;
