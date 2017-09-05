@@ -21,6 +21,14 @@ with lib;
 		notmuch
 		python27Packages.afew
 
+		# Games
+		tome4
+
+		# Dev
+		# C
+		cmake
+		gnumake
+
 		# Software
 		beancount
 		calibre
@@ -29,6 +37,7 @@ with lib;
 		dwarf-fortress
 		dwarf-fortress-packages.phoebus-theme
 		fava
+		gajim
 		gparted
 		htop
 		i3lock
@@ -36,6 +45,7 @@ with lib;
 		less
 		libreoffice
 		#lxappearance
+		mumble
 		neovim
 		openvpn
 		pavucontrol
@@ -58,7 +68,7 @@ with lib;
 		# System
 		arandr
 		bashmount
-		#busybox
+#		busybox
 		curl
 		davfs2
 		exfat
