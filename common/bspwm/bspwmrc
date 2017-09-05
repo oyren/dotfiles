@@ -2,7 +2,7 @@
 sxhkd &
 polybar myBar &
 nm-applet &
-emacs --daemon &
+#emacs --daemon &
 numlockx &
 seafile-applet &
 
