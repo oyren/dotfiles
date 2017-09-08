@@ -54,7 +54,7 @@ in
 		};
 	};
 	# Kernel
-	#boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
+	boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
 	#System Language
 	i18n = {
@@ -86,6 +86,16 @@ in
 		mode = "444";
 	};
 
+  environment.sessionVariables = {
+      XCURSOR_PATH = [
+        "${config.system.path}/share/icons"
+        "$HOME/.icons"
+        "$HOME/.nix-profile/share/icons/"
+      ];
+      GTK_DATA_PREFIX = [
+        "${config.system.path}"
+      ];
+  };
 	#Redshift
 	services.redshift = {
 		enable = true;

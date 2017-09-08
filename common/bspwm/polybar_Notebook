@@ -19,7 +19,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/myBar]
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 18
 

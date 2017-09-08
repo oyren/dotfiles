@@ -33,19 +33,28 @@ with lib;
 		beancount
 		calibre
 		colordiff
+    darktable
 		emacs
 		dwarf-fortress
 		dwarf-fortress-packages.phoebus-theme
 		fava
 		gajim
-		gparted
+    
 		htop
 		i3lock
 		keepass
 		less
 		libreoffice
-		#lxappearance
-		mumble
+    lxappearance
+#    (lxappearance.overrideAttrs(old:
+#    rec {
+#      name = "lxappearance-0.6.2";
+#      src = fetchurl {
+#        url = "mirror://sourceforge/project/lxde/LXAppearance/${name}.tar.xz";
+#        sha256 = "07r0xbi6504zjnbpan7zrn7gi4j0kbsqqfpj8v2x94gr05p16qj4";
+#      };
+#    }))
+    mumble
 		neovim
 		openvpn
 		pavucontrol
@@ -70,6 +79,7 @@ with lib;
 		bashmount
 #		busybox
 		curl
+    cryptsetup
 		davfs2
 		exfat
 		fam
@@ -102,8 +112,7 @@ with lib;
 		aspellDicts.en
 		# texlive.combined.scheme-full
 	]) ++ (with rolling; [
-		chromium
-		lxappearance
+		#lxappearance
 		qutebrowser
 	]);
 }
