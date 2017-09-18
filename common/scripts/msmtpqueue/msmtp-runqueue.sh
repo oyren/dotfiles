@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QUEUEDIR="$HOME/.msmtpqueue"
+QUEUEDIR="$HOME/.mail/msmtpqueue"
 LOCKFILE="$QUEUEDIR/.lock"
 MAXWAIT=120
 
@@ -39,7 +39,7 @@ for MAILFILE in *.mail; do
 		echo "FAILURE"
 		continue
 	fi
-	msmtp `cat "$MSMTPFILE"` < "$MAILFILE"
+	/run/current-system/sw/bin/msmtp `cat "$MSMTPFILE"` < "$MAILFILE"
 	if [ $? -eq 0 ]; then
 		rm "$MAILFILE" "$MSMTPFILE"
 		echo "$MAILFILE sent successfully"

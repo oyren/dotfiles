@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QUEUEDIR=$HOME/.msmtpqueue
+QUEUEDIR=$HOME/.mail/msmtpqueue
 
 # Set secure permissions on created directories and files
 umask 077
