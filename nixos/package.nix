@@ -51,6 +51,7 @@ with lib;
 		htop
 		i3lock
     keepassx-community
+    kolourpaint
 		less
 		libreoffice
     lxappearance
