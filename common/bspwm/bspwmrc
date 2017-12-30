@@ -4,8 +4,9 @@ polybar myBar &
 nm-applet &
 #emacs --daemon &
 numlockx &
+xsetwacom set  "Wacom Bamboo One S Pen stylus" PressureCurve 0 15 85 100 &
 seafile-applet &
-redshift &
+sct 3500 &
 
 #if [[ $(hostname) == 'nixos' ]]; then
 	bspc monitor -d I II III IV V VI VII VIII IX X
@@ -24,6 +25,9 @@ redshift &
 #	bspc monitor -d I II III IV V VI VII VIII IX X
 #	#bspc monitor eDP1 -d VII VIII IX X
 #fi
+
+
+bspc config focus_follows_pointer true
 
 bspc config border_width         2
 bspc config window_gap           0
@@ -46,3 +50,4 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Emacs state=tiled
+bspc rule -a libreoffice state=tiled

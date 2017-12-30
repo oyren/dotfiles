@@ -10,6 +10,15 @@ super + Return
 super + d
 	rofi -show drun -color-window '#000000, #000000,#000000' -color-normal '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -color-active '#000000, #aaaaaa, #000000, #145f9d, #eeeeee' -color-urgent '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -hide-scrollbar -location 2
 
+# Screenshot
+super + p
+	  shutter -s
+
+
+# i3lock
+super + y
+	  i3lock -c 000000 -f 
+
 # close and kill
 super + {_,shift + }c
 	bspc node -{c,k}
@@ -29,6 +38,11 @@ super + {t,shift + t,s,m}
 
 # focus/swap
 #
+
+#
+super + r
+	  bspc node -n 'last.!automatic.local'
+
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
