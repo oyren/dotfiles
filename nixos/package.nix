@@ -18,7 +18,8 @@ with lib;
 
 		# Mail
 		isync
-		notmuch
+    msmtp
+    #notmuch
 		python27Packages.afew
 
 		# Games
@@ -26,23 +27,30 @@ with lib;
 
 		# Dev
 		# C
-		cmake
-		gnumake
+#    clang
+    cmake
+    gcc
+    gnumake
+    ## Libs
+    ncurses
 
-		# Software
-		beancount
+    # Elektronic
+    logisim
+    kicad
+
+    # Software
+    beancount
 		calibre
 		colordiff
     darktable
-		emacs
+		#emacs
 		dwarf-fortress
 		dwarf-fortress-packages.phoebus-theme
 		fava
 		gajim
-    
 		htop
 		i3lock
-		keepass
+    keepassx-community
 		less
 		libreoffice
     lxappearance
@@ -55,18 +63,21 @@ with lib;
 #      };
 #    }))
     mumble
+    mpv
 		neovim
-		openvpn
+    openconnect
+    openvpn
 		pavucontrol
 		pcmanfm
+    ranger
 		roxterm
+    #qutebrowser
 		screenfetch
 		seafile-client
 		shutter
 		ssvnc
-		steam
-		speedcrunch
-		taskwarrior
+		#steam
+	#	speedcrunch
 		thunderbird
 		tig
 		tldr
@@ -77,6 +88,7 @@ with lib;
 		# System
 		arandr
 		bashmount
+    breeze-icons
 #		busybox
 		curl
     cryptsetup
@@ -92,7 +104,8 @@ with lib;
 		networkmanagerapplet
 		ntfs3g
 		numlockx
-		pciutils
+    redshift
+    pciutils
 		python
 		python27Packages.pip
 		python27Packages.setuptools
@@ -101,19 +114,37 @@ with lib;
 		python35Packages.setuptools
 		unrar
 		unzip
+    wget
 		xbrightness
 		xdotool
 		xorg.libXt
 		xorg.libXtst
-
 		# Writing
 		aspell
 		aspellDicts.de
 		aspellDicts.en
-		# texlive.combined.scheme-full
+    gnuplot
+    #texlive.combined.scheme-basic
+		texlive.combined.scheme-full
+
+    # Thinkpad
+    linuxPackages.acpi_call
 	]) ++ (with rolling; [
-		#lxappearance
-		qutebrowser
+  libwacom
+  #lxappearance
+  emacs
+  steam
+  speedcrunch
+  notmuch
+  firefox
+  firefox-bin
+  bspwm
+  #wineUnstable
+  #tibia
+  qutebrowser
+  torbrowser
+  qt5.qtwebengine
+  samsung-unified-linux-driver
 	]);
 }
 

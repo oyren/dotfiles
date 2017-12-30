@@ -2,7 +2,7 @@
 
 let
 	nixcfg = {allowUnfree = true;};
-	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-17.03.tar.gz) { config = nixcfg; };
+	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-17.09.tar.gz) { config = nixcfg; };
 	rolling = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz) {  config = nixcfg; };
 
 	pkgs = stable;
@@ -13,13 +13,18 @@ in
 		./system.nix
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
-	services.xserver = {
+	services = {
+
+    xserver = {
 
 		enable = true;
 		layout = "us";
 		xkbOptions = "eurosign:e";
 
+    #desktopManager.plasma5.enable = true;
+    #desktopManager.default = "plasma5";
 		windowManager.bspwm.enable = true;
+    #windowManager.bspwm.package = "pkgs.bspwm-unstable";
 		windowManager.default = "bspwm";
 		windowManager.bspwm.configFile = "/home/user/dotfiles/common/bspwm/bspwmrc";
 		windowManager.bspwm.sxhkd.configFile= "/home/user/dotfiles/common/bspwm/sxhkdrc";
@@ -30,31 +35,36 @@ in
 			user = "user";
 		};
 
-		xrandrHeads = ["DP-1" "HDMI-0"];
-	};
 
+    # Wacom
+    wacom.enable = true;
+	  #	xrandrHeads = ["DP2-2" "DP2-1" "HDMI-0"];
+	  };
+    tlp.enable = true;
+  };
 	# Systemd
-	systemd = {
-		user.services.checkmail = {
-			description = "check mail";
-			serviceConfig = {
-				Type = "oneshot";
-				ExecStart = /home/user/dotfiles/common/scripts/checkmail.sh;
-			};
-		};
-		user.timers.checkmail = {
-			description = "Run the Checkmail Service every 5 Minutes";
-			timerConfig = {
-				Persistent= false;
-				OnBootSec = "5min";
-				OnUnitActiveSec = "5min";
-				Unit= "checkmail.service";
-			};
-			wantedBy = [ "default.target" ];
-		};
-	};
+#	systemd = {
+#		user.services.checkmail = {
+#			description = "check mail";
+#			serviceConfig = {
+#				Type = "oneshot";
+#				ExecStart = /home/user/dotfiles/common/scripts/checkmail.sh;
+#			};
+#		};
+#		user.timers.checkmail = {
+#			description = "Run the Checkmail Service every 10 Seconds";
+#			timerConfig = {
+#				Persistent= false;
+#        #OnCalendar= "*:*:0/10";
+#        OnBootSec = "1min";
+#				OnUnitActiveSec = "10s";
+#				Unit= "checkmail.service";
+#			};
+#			wantedBy = [ "timers.target" ];
+#		};
+#	};
 	# Kernel
-	boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
+#  boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
 	#System Language
 	i18n = {
@@ -64,10 +74,10 @@ in
 	#Time
 	time.timeZone = "Europe/Berlin";
 
-	security.sudo.extraConfig =
-	''
-		user ALL=(ALL) NOPASSWD: /home/user/.dotfiles/script/webdav.sh
-	'';
+	#security.sudo.extraConfig =
+	#''
+	#	user ALL=(ALL) NOPASSWD: /home/user/.dotfiles/script/webdav.sh
+	#'';
 
 	# Fonts
 	fonts = {
@@ -82,32 +92,47 @@ in
 		text = ''
 			gtk-icon-theme-name=arc
 			gtk-theme-name=arc-dark
+      breeze-icons
 		'';
 		mode = "444";
 	};
 
   environment.sessionVariables = {
-      XCURSOR_PATH = [
-        "${config.system.path}/share/icons"
-        "$HOME/.icons"
-        "$HOME/.nix-profile/share/icons/"
-      ];
+      #XCURSOR_PATH = [
+      #  "${config.system.path}/share/icons"
+      #  "$HOME/.icons"
+      #  "$HOME/.nix-profile/share/icons/"
+      #];
       GTK_DATA_PREFIX = [
         "${config.system.path}"
       ];
   };
+
+networking.firewall.allowedTCPPorts = [ 27036 ];
+networking.firewall.allowedUDPPorts = [ 27036 ];
 	#Redshift
-	services.redshift = {
-		enable = true;
-		latitude = "50";
-		longitude = "10";
-	};
+#	services.redshift = {
+#		enable = true;
+#		latitude = "50";
+#		longitude = "10";
+#    temperature = {
+#      night = 3200;
+#      day = 4800;
+#    };
+#	};
 
 	#Network
 	networking.networkmanager.enable = true;
 
+
+  #Scan
+
 	#Hardware
 	hardware = {
+    sane = {
+      enable = true;
+#      netConf = "10.10.1.20";
+    };
 		pulseaudio = {
 			enable = true;
 			support32Bit = true;
@@ -134,6 +159,8 @@ in
 		shellAliases = {
 			ls="ls --color=auto";
 			l="ls -alh";
+      r="ranger";
+      newc="/dea/org/dev/template/new_project.sh";
 		};
 	};
 	users.defaultUserShell = "/run/current-system/sw/bin/zsh";
@@ -153,7 +180,7 @@ in
 
 	# Clean up
 	nix.gc.automatic = true;
-	nix.gc.dates = "16:14";
+	nix.gc.dates = "weekly";
 	nix.gc.options = "--delete-older-than 30d";
 	nix.extraOptions = ''
 		gc-keep-output = true
@@ -161,6 +188,16 @@ in
 		auto-optimise-stor = true
 	'';
 	# boot.cleanTmpDir = true;
+
+  # Wacom
+
+  # udev
+  #services.udev.extraRules = ''
+  #ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", RUN+="${pkgs.stdenv.shell} -c /home/user/dotfiles/common/scripts/monitor-hotplug.sh"
+  #'';
+
+  #ADB
+  programs.adb.enable = true;
 
 	# Search
 	services.locate.enable = true;
@@ -171,10 +208,10 @@ in
 	users.extraUsers.user = {
 		isNormalUser = true;
 		home = "/home/user";
-		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout"];
+		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
 	};
 
 	virtualisation.virtualbox.host.enable = true;
-
+  virtualisation.docker.enable = true;
 	system.stateVersion = "17.03";
 }
