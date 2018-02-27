@@ -1,14 +1,14 @@
 #!/bin/sh
 
-STATE=`~/.nix-profile/bin/nmcli networking connectivity`
+STATE=`/run/current-system/sw/bin/nmcli networking connectivity`
 
 if [ $STATE = 'full' ]
 then
     ~/dotfiles/common/scripts/msmtpqueue/msmtp-runqueue.sh
-    ~/.nix-profile/bin/mbsync -aqq
-    ~/.nix-profile/bin/notmuch new
-    ~/.nix-profile/bin/afew -tn
-    ~/.nix-profile/bin/notmuch tag -inbox tag:inbox AND tag:lists
+    /run/current-system/sw/bin/mbsync -aqq
+    /run/current-system/sw/bin/notmuch new
+    /run/current-system/sw/bin/afew -tn
+    /run/current-system/sw/bin/notmuch tag -inbox tag:inbox AND tag:lists
     exit 0
 
 fi
