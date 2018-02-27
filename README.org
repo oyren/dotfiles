@@ -3,17 +3,24 @@
 #+OPTIONS: toc
 *Table of  Contents*
 -[[Introduction][Introduction]]
+
 -[[bspwm][bspwm]]
+
 	-[[Screenshot][Screenshot]]
+
 	-[[Software][Software]]
+
 	-[[Keybindings][Keybindings]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
-Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]] onfiguration. 
+Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]]
+onfiguration. 
+
 [[https://nixos.org/][NixOS]] is a Linux distribution with a unique approach to package and
 configuration management. Built on top of the [[https://nixos.org/nix/][Nix package manager]], it is
 completely declarative, makes upgrading systems reliable, and has many other
 advantages.
+
 I strongly recommend that you take a look at it.
 * bspwm
 ** Screenshot
@@ -67,9 +74,13 @@ ln -s /home/user/dotfiles/nixos/system_t470.nix /etc/nixos/system.nix
 
 #+END_SRC
 *Note:*
-*I have multiple system.nix, pick one for your needs. (e.g. system_tower.nix for your tower pc)*
+
+*I have multiple system.nix, pick one for your needs. (e.g. system_tower.nix for
+your tower pc)*
+
 *My username is 'user', if you want to use another, you have to change it
 manually (see the Paths and configuration.nix).*
+
 
 
 
