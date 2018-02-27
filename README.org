@@ -3,15 +3,13 @@
 #+OPTIONS: toc
 *Table of  Contents*
 
-+[[Introduction][ Introduction]]
-+ [[bspwm][bspwm]]
++[[#Introduction][Introduction]]
++ [[#bspwm][bspwm]]
+	+ [[#Screenshot][Screenshot]]
 
-	+ [[Screenshot][Screenshot]]
-
-	+ [[Software][Software]]
-
-	+ [[Keybindings][Keybindings]]
-+ [[NixOS][NixOS]]
+	+ [[#Software][Software]]
+	+ [[#Keybindings][Keybindings]]
++ [[#NixOS][NixOS]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
 Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]]
@@ -70,9 +68,7 @@ mkdir /home/user/
 git clone https://github.com/oyren/dotfiles.git /home/user/
 mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
 ln -s /home/user/dotfiles/nixos/configuration.nix /etc/nixos
-ln -s /home/user/dotfiles/nixos/package.nix /etc/nixos
-ln -s /home/user/dotfiles/nixos/system_t470.nix /etc/nixos/system.nix
-
+ln -s /home/user/dotfiles/nixos/system_t470.nix /home/user/dotfiles/nixos/system.nix
 #+END_SRC
 *Note:*
 

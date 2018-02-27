@@ -9,7 +9,7 @@ let
 in
 {
 	imports = [
-		./hardware-configuration.nix
+		/etc/nixos/hardware-configuration.nix
 		./system.nix
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
@@ -189,8 +189,6 @@ networking.firewall.allowedUDPPorts = [ 27036 ];
 	'';
 	# boot.cleanTmpDir = true;
 
-  # Wacom
-
   # udev
   #services.udev.extraRules = ''
   #ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", RUN+="${pkgs.stdenv.shell} -c /home/user/dotfiles/common/scripts/monitor-hotplug.sh"
@@ -210,6 +208,9 @@ networking.firewall.allowedUDPPorts = [ 27036 ];
 		home = "/home/user";
 		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
 	};
+ nixpkgs.config.permittedInsecurePackages = [
+         "webkitgtk-2.4.11"
+       ];
 
 	virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
