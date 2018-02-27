@@ -55,3 +55,11 @@ Note: You can press super/win key and move a window around in floating mode.
 | notmuch+mbsync+msmtp | mailclient          |
 | org                  | lecture note taking |
 |                      | prestentation       |
+
+
+* License
+All the files in this repository (except submodule) is under 
+[WTFPL - Do What the Fuck You Want to Public License]
+(http://www.wtfpl.net/).
+
+See full text at [[./LICENSE]] .
