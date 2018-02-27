@@ -11,13 +11,16 @@ STATE=`/run/current-system/sw/bin/nmcli networking connectivity`
 
 if [ $STATE = 'full' ]
 then
-  echo check mail > ~/.mail.log
   (~/dotfiles/common/scripts/msmtpqueue/msmtp-runqueue.sh > /dev/null 2>&1 )&
+  # Debug
+  #(~/dotfiles/common/scripts/msmtpqueue/msmtp-runqueue.sh >> ~/mail.log) &# > /dev/null 2>&1 )&
   (/run/current-system/sw/bin/mbsync -aqq > /dev/null 2>&1 )&
+  # Debug
+  #(/run/current-system/sw/bin/mbsync -a >> ~/mail.log )&
   (/run/current-system/sw/bin/notmuch new > /dev/null 2>&1 )&
   (/run/current-system/sw/bin/afew -tn > /dev/null 2>&1 )&
   (/run/current-system/sw/bin/notmuch tag -inbox tag:inbox AND tag:lists > /dev/null 2>&1 )&
-  propagate_deletions
+  (propagate_deletions > /dev/null 2>&1)&
 fi
 
 shopt -s nullglob
