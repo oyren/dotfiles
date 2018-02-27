@@ -9,23 +9,29 @@
 	-[[Keybindings][Keybindings]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
-Too archive this i use the following Software:
+Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]] onfiguration. 
+[[https://nixos.org/][NixOS]] is a Linux distribution with a unique approach to package and
+configuration management. Built on top of the [[https://nixos.org/nix/][Nix package manager]], it is
+completely declarative, makes upgrading systems reliable, and has many other
+advantages.
+I strongly recommend that you take a look at it.
 * bspwm
 ** Screenshot
 [[./screenshots/screenshot1.png]]
 ** Software
-| *Programm*                                  | *Description*       |
-| bspwm                                       | tilling window manager |
-| polybar                                     | status bar             |
-| rofi                                        | run dialog / dmenu     |
-| spacemacs                                   | text editor            |
-| roxterm                                     | terminal               |
-| nm-applet                                   | network manager        |
-| ranger                                      | file manager           |
-| qutebrowser                                 | vim-like web browser   |
-| speedcrunch                                 | calculator             |
-| tldr                                        | simplified man pages   |
-| i3lock                                      | lockscreen             |
+| *Programm*      | *Description*          |
+| bspwm           | tilling window manager |
+| polybar         | status bar             |
+| rofi            | run dialog / dmenu     |
+| spacemacs       | text editor            |
+| roxterm         | terminal               |
+| nm-applet       | network manager        |
+| ranger          | file manager           |
+| qutebrowser     | vim-like web browser   |
+| speedcrunch     | calculator             |
+| tldr            | simplified man pages   |
+| i3lock          | lockscreen             |
+| zsh (Oh My Zsh) | Unix shell            |
 
 ** Keybindings
 | *Key*           | *Description*                               |
@@ -49,8 +55,26 @@ Too archive this i use the following Software:
 For a deeper insight, check out the config files.  
 Note: You can press super/win key and move a window around in floating mode.  
 
+* NixOS
+In the folder [[./nixos/][nixos]], you will find a configuration.nix, package.nix and some system_*.nix
+#+BEGIN_SRC sh
+mkdir /home/user/
+git clone https://github.com/oyren/dotfiles.git /home/user/
+mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
+ln -s /home/user/dotfiles/nixos/configuration.nix /etc/nixos
+ln -s /home/user/dotfiles/nixos/package.nix /etc/nixos
+ln -s /home/user/dotfiles/nixos/system_t470.nix /etc/nixos/system.nix
+
+#+END_SRC
+*Note:*
+*I have multiple system.nix, pick one for your needs. (e.g. system_tower.nix for your tower pc)*
+*My username is 'user', if you want to use another, you have to change it
+manually (see the Paths and configuration.nix).*
+
+
 
 * emacs
+Can't post my emacs config here becouse it is messy. Here are some Notes:
 |                      |                     |
 | notmuch+mbsync+msmtp | mailclient          |
 | org                  | lecture note taking |
