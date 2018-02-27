@@ -208,9 +208,6 @@ networking.firewall.allowedUDPPorts = [ 27036 ];
 		home = "/home/user";
 		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
 	};
- nixpkgs.config.permittedInsecurePackages = [
-         "webkitgtk-2.4.11"
-       ];
 
 	virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;

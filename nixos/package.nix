@@ -40,7 +40,7 @@ with lib;
 
     # Software
     beancount
-		calibre
+		#calibre
 		colordiff
     darktable
 		#emacs
@@ -63,6 +63,7 @@ with lib;
 #        sha256 = "07r0xbi6504zjnbpan7zrn7gi4j0kbsqqfpj8v2x94gr05p16qj4";
 #      };
 #    }))
+    mirage
     mumble
     mpv
 		neovim
@@ -88,6 +89,7 @@ with lib;
 
 		# System
 		arandr
+    acpi
 		bashmount
     breeze-icons
 #		busybox
@@ -125,6 +127,7 @@ with lib;
 		aspellDicts.de
 		aspellDicts.en
     gnuplot
+    pandoc
     #texlive.combined.scheme-basic
 		texlive.combined.scheme-full
 
