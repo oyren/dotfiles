@@ -1,3 +1,7 @@
+#+TITLE: Dotfiles     
+# -*- mode: org; -*-
+#+OPTIONS: toc
+
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
 Too archive this i use the following Software:
@@ -18,10 +22,10 @@ Too archive this i use the following Software:
 
 ** Keybindings
 | Key             | Description                                  |
-| ---             | ---                                          |
+| ------          | -------                                      |
 | d               | run dialog (rofi) to start application       |
 | c               | close current Window                         |
-| f               | switch current window to fullscreen        |
+| f               | switch current window to fullscreen          |
 | enter           | spawn roxterm                                |
 | {1-9,0}         | switch to workspace N                        |
 | shift + {1-9,0} | move current window to workspace N           |
@@ -41,7 +45,7 @@ Note: You can press super/win key and move a window around in floating mode.
 
 
 * bspw
-[file:./screenshot/screenshot1.png]
+[file:./screenshots/screenshot1.png]
 
 
 * emacs
