@@ -113,7 +113,7 @@ super + e
 
 # Toggle touchpad
 super + p 
-	$HOME/.dotfiles/script/touchpad_toggle.sh
+	$HOME/dotfiles/script/touchpad_toggle.sh
 
 # Brightness
 XF86MonBrightness{Down,Up}
