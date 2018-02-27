@@ -2,15 +2,18 @@
 # -*- mode: org; -*-
 #+OPTIONS: toc
 *Table of  Contents*
--[[Introduction][Introduction]]
 
--[[bspwm][bspwm]]
++[[Introduction][ Introduction]]
 
-	-[[Screenshot][Screenshot]]
++ [[bspwm][bspwm]]
 
-	-[[Software][Software]]
+	+ [[Screenshot][Screenshot]]
 
-	-[[Keybindings][Keybindings]]
+	+ [[Software][Software]]
+
+	+ [[Keybindings][Keybindings]]
+
++ [[NixOS][NixOS]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
 Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]]
