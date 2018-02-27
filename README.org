@@ -1,0 +1,51 @@
+* Introduction
+This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
+Too archive this i use the following Software:
+** Software
+| Programm    | Description            |
+| ---         | ---                    |
+| bspwm       | tilling window manager |
+| polybar     | status bar             |
+| rofi        | run dialog / dmenu     |
+| spacemacs   | text editor            |
+| roxterm     | terminal               |
+| nm-applet   | network manager        |
+| ranger      | file manager           |
+| qutebrowser | vim-like web browser   |
+| speedcrunch | calculator             |
+| tldr        | simplified man pages   |
+| i3lock      | lockscreen             |
+
+** Keybindings
+| Key             | Description                                  |
+| ---             | ---                                          |
+| d               | run dialog (rofi) to start application       |
+| c               | close current Window                         |
+| f               | switch current window to fullscreen        |
+| enter           | spawn roxterm                                |
+| {1-9,0}         | switch to workspace N                        |
+| shift + {1-9,0} | move current window to workspace N           |
+| {h,j,k,l}       | vim keybindings to change current focus      |
+| shift+{h,j,k,l} | vim keybindings to move the current window   |
+| alt+{h,j,k,l}   | resize current window                        |
+| ctrl+{h,j,k,l}  | preselect position of new window             |
+| ctrl+space      | canel preselection                           |
+| r               | move selected window to preselected position |
+| t               | switch current window to tilling mode        |
+| s               | switch current window to floating mode       |
+| y               | lockscreen (i3lock)                          |
+
+*Every key must be pressed in combination with the super/win key*.  
+For a deeper insight, check out the config files.  
+Note: You can press super/win key and move a window around in floating mode.  
+
+
+* bspw
+[file:./screenshot/screenshot1.png]
+
+
+* emacs
+|                      |                     |
+| notmuch+mbsync+msmtp | mailclient          |
+| org                  | lecture note taking |
+|                      | prestentation       |
