@@ -10,10 +10,11 @@
 	+ [[#software][Software]]
 	+ [[#keybindings][Keybindings]]
 + [[#nixos][NixOS]]
++ [[#emacs][Emacs]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
-Too archive this i use the following [[Software][Software]]. You will also find my [[NixOS][NixOS]]
-onfiguration. 
+Too archive this i use the following [[#software][Software]]. You will also find my
+[[#nixos][NixOS]] configuration. 
 
 [[https://nixos.org/][NixOS]] is a Linux distribution with a unique approach to package and
 configuration management. Built on top of the [[https://nixos.org/nix/][Nix package manager]], it is
@@ -83,10 +84,16 @@ manually (see the Paths and configuration.nix).*
 
 * emacs
 Can't post my emacs config here becouse it is messy. Here are some Notes:
-|                      |                     |
-| notmuch+mbsync+msmtp | mailclient          |
-| org                  | lecture note taking |
-|                      | prestentation       |
+
+
+I use a [[http://spacemacs.org/][Spacemacs]] in vim mode.
+My Mailsetup is a combination of notmuch, mbsync and msmtp.
+
+My Org-mode setup is very similar to [[http://doc.norang.ca/org-mode.html][Guide by Bernt Hansen]] and [[http://cachestocaches.com/2016/9/my-workflow-org-agenda/][My Workflow with
+Org-Agenda]].
+
+I also write my studies transcripts in org-mode and export them whit
+[[http://docs.readthedocs.io/en/latest/][Read The Docs]] (Setup and Demo can be found under [[https://github.com/fniessen/org-html-themes][Org-HTML-Themes]]).
 
 
 * License
