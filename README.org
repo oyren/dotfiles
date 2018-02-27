@@ -1,10 +1,18 @@
 #+TITLE: Dotfiles     
 # -*- mode: org; -*-
 #+OPTIONS: toc
-
+*Table of  Contents*
+-[[Introduction][Introduction]]
+-[[bspwm][bspwm]]
+	-[[Screenshot][Screenshot]]
+	-[[Software][Software]]
+	-[[Keybindings][Keybindings]]
 * Introduction
 This repository contains my dotfiles, which are designed to work quickly and efficiently with vim-like keybindings.
 Too archive this i use the following Software:
+* bspwm
+** Screenshot
+[[./screenshots/screenshot1.png]]
 ** Software
 | *Programm*                                  | *Description*       |
 | bspwm                                       | tilling window manager |
@@ -41,9 +49,6 @@ Too archive this i use the following Software:
 For a deeper insight, check out the config files.  
 Note: You can press super/win key and move a window around in floating mode.  
 
-
-* bspw
-[[./screenshots/screenshot1.png]]
 
 * emacs
 |                      |                     |
