@@ -43,8 +43,7 @@ Note: You can press super/win key and move a window around in floating mode.
 
 
 * bspw
-[file:./screenshots/screenshot1.png]
-
+[[./screenshots/screenshot1.png]]
 
 * emacs
 |                      |                     |
