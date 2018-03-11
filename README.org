@@ -65,11 +65,13 @@ Note: You can press super/win key and move a window around in floating mode.
 * NixOS
 In the folder [[./nixos/][nixos]], you will find a configuration.nix, package.nix and some system_*.nix
 #+BEGIN_SRC sh
-mkdir /home/user/
+mkdir -p /home/user/
+mkdir -p /home/user/.config/zathura/
 git clone https://github.com/oyren/dotfiles.git /home/user/
 mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
 ln -s /home/user/dotfiles/nixos/configuration.nix /etc/nixos
 ln -s /home/user/dotfiles/nixos/system_t470.nix /home/user/dotfiles/nixos/system.nix
+ln -s /home/user/dotfiles/common/zathurarc /home/user/.config/zathura
 #+END_SRC
 *Note:*
 
