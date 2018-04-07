@@ -2,7 +2,7 @@
 
 let
 	nixcfg = {allowUnfree = true;};
-	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-17.09.tar.gz) { config = nixcfg; };
+	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-18.03.tar.gz) { config = nixcfg; };
 	rolling = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz) {  config = nixcfg; };
 
 	pkgs = stable;
@@ -16,7 +16,6 @@ in
 	services = {
 
     xserver = {
-
 		enable = true;
 		layout = "us";
 		xkbOptions = "eurosign:e";
@@ -108,8 +107,8 @@ in
       ];
   };
 
-networking.firewall.allowedTCPPorts = [ 27036 ];
-networking.firewall.allowedUDPPorts = [ 27036 ];
+#networking.firewall.allowedTCPPorts = [ 27036 ];
+#networking.firewall.allowedUDPPorts = [ 27036 ];
 	#Redshift
 #	services.redshift = {
 #		enable = true;
@@ -179,14 +178,9 @@ networking.firewall.allowedUDPPorts = [ 27036 ];
 	#swapDevices.*.size = "1024";
 
 	# Clean up
-	nix.gc.automatic = true;
-	nix.gc.dates = "weekly";
-	nix.gc.options = "--delete-older-than 30d";
-	nix.extraOptions = ''
-		gc-keep-output = true
-		gc-keep-derivations = true
-		auto-optimise-stor = true
-	'';
+	#nix.gc.automatic = true;
+	#nix.gc.dates = "17:00";
+	#nix.gc.options = "--delete-older-than 30d";
 	# boot.cleanTmpDir = true;
 
   # udev
@@ -211,5 +205,5 @@ networking.firewall.allowedUDPPorts = [ 27036 ];
 
 	virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
-	system.stateVersion = "17.03";
+	system.stateVersion = "18.03";
 }

@@ -20,7 +20,7 @@ with lib;
 		isync
     msmtp
     #notmuch
-		python27Packages.afew
+		afew
 
 		# Games
 		tome4
@@ -47,13 +47,11 @@ with lib;
 		dwarf-fortress
 		dwarf-fortress-packages.phoebus-theme
 		fava
-		gajim
 		htop
 		i3lock
-    keepassx-community
     kolourpaint
 		less
-		libreoffice
+#		libreoffice
     lxappearance
 #    (lxappearance.overrideAttrs(old:
 #    rec {
@@ -77,7 +75,8 @@ with lib;
 		screenfetch
 		seafile-client
 		shutter
-		ssvnc
+    sshuttle
+    ssvnc
 		#steam
 	#	speedcrunch
 		thunderbird
@@ -122,12 +121,12 @@ with lib;
 		xdotool
 		xorg.libXt
 		xorg.libXtst
+cifs_utils
 		# Writing
 		aspell
 		aspellDicts.de
 		aspellDicts.en
     gnuplot
-    pandoc
     #texlive.combined.scheme-basic
 		texlive.combined.scheme-full
 
@@ -136,7 +135,10 @@ with lib;
 	]) ++ (with rolling; [
   libwacom
   #lxappearance
+  dino
   emacs
+	libreoffice
+  opentx
   steam
   speedcrunch
   notmuch
@@ -146,8 +148,8 @@ with lib;
   #wineUnstable
   #tibia
   qutebrowser
-  torbrowser
-  qt5.qtwebengine
+  #torbrowser
+  # qt5.qtwebengine
   samsung-unified-linux-driver
 	]);
 }
