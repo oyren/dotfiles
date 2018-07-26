@@ -1,10 +1,10 @@
 #! /bin/sh
 sxhkd &
 polybar --config=$HOME/dotfiles/common/bspwm/polybar_lx1y myBar &
+/bin/sh $HOME/dotfiles/common/scripts/system.sh
 nm-applet &
 #emacs --daemon &
 numlockx &
-xsetwacom set  "Wacom Bamboo One S Pen stylus" PressureCurve 0 15 85 100 &
 seafile-applet &
 sct 3500 &
 
