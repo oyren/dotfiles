@@ -60,6 +60,7 @@ with lib;
 		fam
 		ghc
 		git
+    go-sct
 #		jdk
 #		jre
 		shared_mime_info

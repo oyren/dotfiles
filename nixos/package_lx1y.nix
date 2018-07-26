@@ -56,6 +56,8 @@ with lib;
 #        sha256 = "07r0xbi6504zjnbpan7zrn7gi4j0kbsqqfpj8v2x94gr05p16qj4";
 #      };
 #    }))
+    mate.caja
+    mate.caja-extensions
     mirage
     mumble
     mpv
@@ -72,7 +74,6 @@ with lib;
     ssvnc
 		#steam
 	#	speedcrunch
-		thunderbird
 		tig
 		tldr
 		xarchiver
@@ -91,6 +92,7 @@ with lib;
 		fam
 		ghc
 		git
+    go-sct
 #		jdk
 #		jre
 		shared_mime_info
@@ -131,6 +133,8 @@ with lib;
 	]) ++ (with rolling; [
 	discord
   libwacom
+
+	thunderbird
   #lxappearance
   dino
   emacs
