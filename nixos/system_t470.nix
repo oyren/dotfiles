@@ -21,7 +21,7 @@
 
 		displayManager.auto = {
 			enable = true;
-			user = "user";
+			user = "sky";
 		};
 
 
