@@ -32,24 +32,19 @@ with lib;
     gcc
     gnumake
     ## Libs
-    ncurses
+    #ncurses
 
     # Elektronic
-    logisim
-    kicad
+#    logisim
+#    kicad
 
     # Software
-    beancount
+ #   beancount
 		#calibre
 		colordiff
-    darktable
+   # darktable
 		#emacs
-		dwarf-fortress
-		dwarf-fortress-packages.phoebus-theme
-		fava
-		htop
 		i3lock
-    kolourpaint
 		less
 #		libreoffice
     lxappearance
@@ -68,13 +63,11 @@ with lib;
     openconnect
     openvpn
 		pavucontrol
-		pcmanfm
     ranger
 		roxterm
-    #qutebrowser
-		screenfetch
+		#screenfetch
 		seafile-client
-		shutter
+		#shutter
     sshuttle
     ssvnc
 		#steam
@@ -90,8 +83,7 @@ with lib;
 		arandr
     acpi
 		bashmount
-    breeze-icons
-#		busybox
+#    breeze-icons
 		curl
     cryptsetup
 		davfs2
@@ -99,21 +91,16 @@ with lib;
 		fam
 		ghc
 		git
-		jdk
-		jre
+#		jdk
+#		jre
 		shared_mime_info
 		lxmenu-data
 		networkmanagerapplet
 		ntfs3g
 		numlockx
-    redshift
+ #   redshift
     pciutils
-		python
-		python27Packages.pip
-		python27Packages.setuptools
-		python3
-		python35Packages.pip
-		python35Packages.setuptools
+    python
 		unrar
 		unzip
     wget
@@ -121,29 +108,39 @@ with lib;
 		xdotool
 		xorg.libXt
 		xorg.libXtst
-cifs_utils
+    cifs_utils
+
+    #System Monitoring
+		htop # task/process-manager
+    psensor # monitor temperature
+    screenfetch # system information
+    s-tui # monitor CPU temperature, frequency, power
+	  xfce.xfce4-taskmanager
+
+
 		# Writing
 		aspell
 		aspellDicts.de
 		aspellDicts.en
     gnuplot
     #texlive.combined.scheme-basic
-		texlive.combined.scheme-full
+#		texlive.combined.scheme-full
 
     # Thinkpad
     linuxPackages.acpi_call
 	]) ++ (with rolling; [
+	discord
   libwacom
   #lxappearance
   dino
   emacs
 	libreoffice
-  opentx
-  steam
+ # opentx
+ # steam
   speedcrunch
-  notmuch
+ # notmuch
   firefox
-  firefox-bin
+ # firefox-bin
   bspwm
   #wineUnstable
   #tibia
@@ -151,6 +148,9 @@ cifs_utils
   #torbrowser
   # qt5.qtwebengine
   samsung-unified-linux-driver
+
+# touch
+onboard
 	]);
 }
 
