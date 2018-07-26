@@ -1,6 +1,6 @@
 #! /bin/sh
 sxhkd &
-polybar myBar &
+polybar --config=$HOME/dotfiles/common/bspwm/polybar_lx1y myBar &
 nm-applet &
 #emacs --daemon &
 numlockx &

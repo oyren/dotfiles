@@ -55,7 +55,7 @@ modules-right = filesystem volume xkeyboard memory cpu wlan eth battery0 tempera
 
 tray-position = left
 tray-padding = 2
-tray-maxsize = 20
+tray-maxsize = 10000
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -288,6 +288,10 @@ animation-charging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d

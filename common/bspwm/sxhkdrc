@@ -82,11 +82,11 @@ super + ctrl + shift + space
 # move/resize
 #
 
-# resize too east 
+# resize too west
 super + alt + h
 	bspc node -z right -20 0 || bspc node -z left -20 0  
 
-# resize too west
+# resize too east
 super + alt + l
 	bspc node -z right 20 0 || bspc node -z left 20 0 
 
