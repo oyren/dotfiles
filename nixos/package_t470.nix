@@ -105,7 +105,7 @@ with lib;
   speedcrunch
   firefox
   samsung-unified-linux-driver
-
+  bspwm
 	]);
 }
 
