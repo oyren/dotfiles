@@ -72,6 +72,7 @@ mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
 ln -s /home/user/dotfiles/nixos/configuration.nix /etc/nixos
 ln -s /home/user/dotfiles/nixos/system_xxxx.nix /home/user/dotfiles/nixos/system.nix
 ln -s /home/user/dotfiles/nixos/package_xxxx.nix /home/user/dotfiles/nixos/package.nix
+ln -s /home/user/dotfiles/common/bspwm/polybar_xxxx /home/user/dotfiles/common/bspwm/polybar
 ln -s /home/user/dotfiles/common/zathurarc /home/user/.config/zathura
 #+END_SRC
 *Note:*
