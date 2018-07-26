@@ -1,3 +1,4 @@
 /common/scripts/system.sh
 /nixos/system.nix
 /nixos/package.nix
+/common/bspwm/polybar
