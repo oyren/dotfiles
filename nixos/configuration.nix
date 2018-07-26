@@ -11,6 +11,7 @@ in
 	imports = [
 		/etc/nixos/hardware-configuration.nix
 		./system.nix
+    ./desktop.nix
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
 	services = {
@@ -39,7 +40,6 @@ in
     wacom.enable = true;
 	  #	xrandrHeads = ["DP2-2" "DP2-1" "HDMI-0"];
 	  };
-    tlp.enable = true;
   };
 	# Systemd
 #	systemd = {
@@ -63,7 +63,7 @@ in
 #		};
 #	};
 	# Kernel
-#  boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
 	#System Language
 	i18n = {
@@ -78,34 +78,35 @@ in
 	#	user ALL=(ALL) NOPASSWD: /home/user/.dotfiles/script/webdav.sh
 	#'';
 
-	# Fonts
-	fonts = {
-		fonts = (with pkgs; [
-			siji
-			source-code-pro
-		]);
-	};
+	## Fonts
+	#fonts = {
+	#	fonts = (with pkgs; [
+	#		siji
+	#		source-code-pro
+  #    font-awesome_5
+	#	]);
+	#};
 
-	#GTK3 Theme
-	environment.etc."xdg/gtk-3.0/settings.ini" = {
-		text = ''
-			gtk-icon-theme-name=arc
-			gtk-theme-name=arc-dark
-      breeze-icons
-		'';
-		mode = "444";
-	};
+	##GTK3 Theme
+	#environment.etc."xdg/gtk-3.0/settings.ini" = {
+	#	text = ''
+	#		gtk-icon-theme-name=arc
+	#		gtk-theme-name=arc-dark
+  #    breeze-icons
+	#	'';
+	#	mode = "444";
+	#};
 
-  environment.sessionVariables = {
-      #XCURSOR_PATH = [
-      #  "${config.system.path}/share/icons"
-      #  "$HOME/.icons"
-      #  "$HOME/.nix-profile/share/icons/"
-      #];
-      GTK_DATA_PREFIX = [
-        "${config.system.path}"
-      ];
-  };
+  #environment.sessionVariables = {
+  #    #XCURSOR_PATH = [
+  #    #  "${config.system.path}/share/icons"
+  #    #  "$HOME/.icons"
+  #    #  "$HOME/.nix-profile/share/icons/"
+  #    #];
+  #    GTK_DATA_PREFIX = [
+  #      "${config.system.path}"
+  #    ];
+  #};
 
 #networking.firewall.allowedTCPPorts = [ 27036 ];
 #networking.firewall.allowedUDPPorts = [ 27036 ];
