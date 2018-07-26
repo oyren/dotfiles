@@ -63,24 +63,26 @@ For a deeper insight, check out the config files.
 Note: You can press super/win key and move a window around in floating mode.  
 
 * NixOS
-In the folder [[./nixos/][nixos]], you will find a configuration.nix, package.nix and some system_*.nix
+In the folder [[./nixos/][nixos]], you will find a configuration.nix, package.nix, desktop.nix and some system_*.nix/package_*.nix
 #+BEGIN_SRC sh
 mkdir -p /home/user/
 mkdir -p /home/user/.config/zathura/
 git clone https://github.com/oyren/dotfiles.git /home/user/
 mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
 ln -s /home/user/dotfiles/nixos/configuration.nix /etc/nixos
-ln -s /home/user/dotfiles/nixos/system_t470.nix /home/user/dotfiles/nixos/system.nix
+ln -s /home/user/dotfiles/nixos/system_xxxx.nix /home/user/dotfiles/nixos/system.nix
+ln -s /home/user/dotfiles/nixos/package_xxxx.nix /home/user/dotfiles/nixos/package.nix
 ln -s /home/user/dotfiles/common/zathurarc /home/user/.config/zathura
 #+END_SRC
 *Note:*
 
-*I have multiple system.nix, pick one for your needs. (e.g. system_tower.nix for
+*I have multiple system.nix/package.nix, choose one of them and adapt it to your needs. (e.g. system_tower.nix for
 your tower pc)*
 
 *My username is 'user', if you want to use another, you have to change it
-manually (see the Paths and configuration.nix).*
+manually (see the Paths and nix files).*
 
+*desktop.nix is used to set fonts and themes.*
 
 
 
