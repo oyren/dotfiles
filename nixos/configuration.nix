@@ -14,33 +14,7 @@ in
     ./desktop.nix
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
-	services = {
 
-    xserver = {
-		enable = true;
-		layout = "us";
-		xkbOptions = "eurosign:e";
-
-    #desktopManager.plasma5.enable = true;
-    #desktopManager.default = "plasma5";
-		windowManager.bspwm.enable = true;
-    #windowManager.bspwm.package = "pkgs.bspwm-unstable";
-		windowManager.default = "bspwm";
-		windowManager.bspwm.configFile = "/home/user/dotfiles/common/bspwm/bspwmrc";
-		windowManager.bspwm.sxhkd.configFile= "/home/user/dotfiles/common/bspwm/sxhkdrc";
-		desktopManager.xterm.enable = false;
-
-		displayManager.auto = {
-			enable = true;
-			user = "user";
-		};
-
-
-    # Wacom
-    wacom.enable = true;
-	  #	xrandrHeads = ["DP2-2" "DP2-1" "HDMI-0"];
-	  };
-  };
 	# Systemd
 #	systemd = {
 #		user.services.checkmail = {
@@ -62,16 +36,6 @@ in
 #			wantedBy = [ "timers.target" ];
 #		};
 #	};
-	# Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
-
-	#System Language
-	i18n = {
-		defaultLocale = "en_US.UTF-8";
-	};
-
-	#Time
-	time.timeZone = "Europe/Berlin";
 
 	#security.sudo.extraConfig =
 	#''
@@ -147,22 +111,7 @@ in
 		#drivers = [ pkgs.samsungUnifiedLinuxDriver ];
 	};
 
-	# ZSH
-	programs.zsh = {
-		enable = true;
-		interactiveShellInit = ''
-			export EDITOR=nvim
-			# Java
-			export _JAVA_AWT_WM_NONREPARENTING=1
-		'';
 
-		shellAliases = {
-			ls="ls --color=auto";
-			l="ls -alh";
-      r="ranger";
-      newc="/dea/org/dev/template/new_project.sh";
-		};
-	};
 	users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
 	#light
@@ -189,22 +138,10 @@ in
   #ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", RUN+="${pkgs.stdenv.shell} -c /home/user/dotfiles/common/scripts/monitor-hotplug.sh"
   #'';
 
-  #ADB
-  programs.adb.enable = true;
 
 	# Search
 	services.locate.enable = true;
 	services.locate.interval = "10 * * * *";
 
-	# Users
-	# user
-	users.extraUsers.user = {
-		isNormalUser = true;
-		home = "/home/user";
-		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
-	};
-
-	virtualisation.virtualbox.host.enable = true;
-  virtualisation.docker.enable = true;
 	system.stateVersion = "18.03";
 }
