@@ -6,7 +6,7 @@
   services.thermald.enable = true; # otherwise the cpu frequency/clock is always at maximum
 
 #  powerManagement = {
-#    enable = true;
+#    enable = false;
 #    cpuFreqGovernor = "ondemand";
 #  };
  # services.tlp = {
@@ -39,9 +39,29 @@
 		# Graphic
 		videoDrivers = ["intel"];
 
+    libinput = {
+      enable = true;
+      clickMethod = "buttonareas";
+      disableWhileTyping = true;
+    };
 		# Notebook
-		synaptics.enable = true;
-		synaptics.twoFingerScroll = true;
+		#synaptics = {
+    #          enable = true;
+		#          twoFingerScroll = true;
+    #          vertTwoFingerScroll = true;
+    #          additionalOptions = ''
+    #              MatchDevicePath "/dev/input/event*"
+    #              Option "TapButton1" "1"
+    #              Option "TapButton2" "2"
+    #              Option "TapButton3" "3"
+    #              Option "ClickPad" "true"
+    #              Option "EmulateMidButtonTime" "0"
+    #              Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
+    #          '';
+    #          maxSpeed = "0.7";
+    #          minSpeed = "0.5";
+    #};
+    #libinput.clickMethod = "buttonareas";
 		multitouch.enable = true;
 	};
 
@@ -93,6 +113,7 @@
 #			  enable = true;
 #	    };
 	};
+
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest; #_4_9; #_latest;
 
