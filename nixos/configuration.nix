@@ -2,7 +2,7 @@
 
 let
 	nixcfg = {allowUnfree = true;};
-	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-18.03.tar.gz) { config = nixcfg; };
+	stable = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-18.09.tar.gz) { config = nixcfg; };
 	rolling = import (fetchTarball https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz) {  config = nixcfg; };
 
 	pkgs = stable;
