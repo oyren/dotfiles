@@ -17,25 +17,7 @@
  #   '';
  # };
 	services.xserver = {
-    enable = true;
-		layout = "us";
-		xkbOptions = "eurosign:e";
-
-    #desktopManager.plasma5.enable = true;
-    #desktopManager.default = "plasma5";
-		windowManager.bspwm.enable = true;
-    #windowManager.bspwm.package = "pkgs.bspwm-unstable";
-		windowManager.default = "bspwm";
-		windowManager.bspwm.configFile = "/home/user/dotfiles/common/bspwm/bspwmrc";
-		windowManager.bspwm.sxhkd.configFile= "/home/user/dotfiles/common/bspwm/sxhkdrc";
-		desktopManager.xterm.enable = false;
-
-		displayManager.auto = {
-			enable = true;
-			user = "user";
-		};
-
-
+    
 		# Graphic
 		videoDrivers = ["intel"];
 
@@ -44,6 +26,8 @@
       clickMethod = "buttonareas";
       disableWhileTyping = true;
     };
+
+    wacom.enable = true;
 		# Notebook
 		#synaptics = {
     #          enable = true;
@@ -98,7 +82,7 @@
 	users.extraUsers.user = {
 		isNormalUser = true;
 		home = "/home/user";
-		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
+		extraGroups = ["davfs2""wheel" "networkmanager" "vboxusers" "audio" "dialout" "adbusers" "lp" "scanner" "plugdev" "docker"];
 	};
 
 	virtualisation.virtualbox.host.enable = true;

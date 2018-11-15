@@ -4,16 +4,23 @@ with lib;
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages =
 	(with stable; [
+
+  write_stylus
 		# Apperence
-		arc-theme
-		arc-icon-theme
+#		arc-theme
+    arc-icon-theme
+    adapta-gtk-theme
+    xfce.gtk-xfce-engine
+    ## Font
+    source-code-pro
 		gnome3.gnome_themes_standard
 		gtk_engines
+
 		gtk-engine-murrine
-		polybar
-		tango-icon-theme
+#		polybar
+#		tango-icon-theme
 		rofi
-		trayer
+#		trayer
 		xorg.xrandr
 
 		# Mail
@@ -47,7 +54,7 @@ with lib;
 		i3lock
 		less
 #		libreoffice
-    lxappearance
+#   lxappearance
 #    (lxappearance.overrideAttrs(old:
 #    rec {
 #      name = "lxappearance-0.6.2";
@@ -56,8 +63,6 @@ with lib;
 #        sha256 = "07r0xbi6504zjnbpan7zrn7gi4j0kbsqqfpj8v2x94gr05p16qj4";
 #      };
 #    }))
-    mate.caja
-    mate.caja-extensions
     mirage
     mumble
     mpv
@@ -66,7 +71,7 @@ with lib;
     openvpn
 		pavucontrol
     ranger
-		roxterm
+#		roxterm
 		#screenfetch
 		seafile-client
 		#shutter
@@ -128,11 +133,24 @@ with lib;
     #texlive.combined.scheme-basic
 #		texlive.combined.scheme-full
 
+
+    (eclipses.eclipseWithPlugins {
+      eclipse = eclipses.eclipse-cpp;
+      jvmArgs = [ "-Xmx2048m" ];
+      plugins = with eclipses.plugins;
+        [ cdt gnuarmeclipse ];
+    })
     # Thinkpad
     linuxPackages.acpi_call
+
+    # XFCE
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+#    xfce.xfce4-mixer-pulse
 	]) ++ (with rolling; [
-	discord
+discord
   libwacom
+  #write_stylus
 
 	thunderbird
   #lxappearance
@@ -145,7 +163,6 @@ with lib;
  # notmuch
   firefox
  # firefox-bin
-  bspwm
   #wineUnstable
   #tibia
   qutebrowser

@@ -4,11 +4,14 @@
 
 # terminal emulator
 super + Return
-	roxterm
+	xfce4-terminal
 
 # program launcher
 super + d
-	rofi -show drun -color-window '#000000, #000000,#000000' -color-normal '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -color-active '#000000, #aaaaaa, #000000, #145f9d, #eeeeee' -color-urgent '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -hide-scrollbar -location 2
+	rofi -mode drun -show drun -color-window '#000000, #000000,#000000' -color-normal '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -color-active '#000000, #aaaaaa, #000000, #145f9d, #eeeeee' -color-urgent '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -hide-scrollbar -location 2 -m -4 -show-icons
+	#-drun-icon-theme Arc
+
+	#rofi -show drun -color-window '#000000, #000000,#000000' -color-normal '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -color-active '#000000, #aaaaaa, #000000, #145f9d, #eeeeee' -color-urgent '#000000, #aaaaaa, #000000, #145f9d, #aaaaaa' -hide-scrollbar -location 2
 
 # Screenshot
 super + p
@@ -119,12 +122,12 @@ super + p
 XF86MonBrightness{Down,Up}
 	light {-U 5,-A 5}
 
-# Volume
+## Volume
 XF86Audio{LowerVolume,RaiseVolume}
-	pactl set-sink-volume 0 {-2%,+2%}
-
-# Mute
+	pactl set-sink-volume 1 {-2%,+2%} # 1 is the device (could change)
+#
+## Mute
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute 1 toggle
 
 

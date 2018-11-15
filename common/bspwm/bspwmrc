@@ -1,12 +1,12 @@
 #! /bin/sh
 sxhkd &
-polybar --config=$HOME/dotfiles/common/bspwm/polybar myBar &
+#polybar --config=$HOME/dotfiles/common/bspwm/polybar myBar &
 #/bin/sh $HOME/dotfiles/common/scripts/system.sh
-nm-applet &
+#nm-applet &
 #emacs --daemon &
-numlockx &
+#numlockx &
 seafile-applet &
-sct 3500 &
+#sct 3500 &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 /home/user/dotfiles/common/scripts/monitor-hotplug.sh

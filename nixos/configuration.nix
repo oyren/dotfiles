@@ -11,7 +11,7 @@ in
 	imports = [
 		/etc/nixos/hardware-configuration.nix
 		./system.nix
-    ./desktop.nix
+		./xfce_bspwm.nix
 		(import ./package.nix {inherit lib config pkgs stable rolling; })
 	];
 
